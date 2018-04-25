@@ -10,11 +10,12 @@ def step_impl(context, kind_of_genre):
     :type context: behave.runner.Context
     """
     assert('music' == kind_of_genre)
-    #context.app = App()
-    the_html = App.go()
-#    assert(the_html is not None)
+    app = context.app = App()
+    station_names = app.go()
+    assert(station_names is not None)
+    assert(len(station_names) > 1)  #Peru should have more than 1
+    print (station_names)
 #    assert(the_html.attrib['lang'] == 'en-us')
-    print (the_html)
 
 
 @then("I get a convenient list of all stations matching both language and genre")

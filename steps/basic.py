@@ -6,8 +6,9 @@ use_step_matcher("re")
 
 def expected_station_names_for(country):
     data = {
-        'Peru': ['Radio Super Latina La Merced', 'Y', 'Z'],
-        'Myanmar': ['A', 'B', 'C'],
+        'Peru': ['Radio Super Latina La Merced', 'RADIO LA FUERTE', 'Union La Radio'],
+        'Myanmar': ['Mandalay FM', 'Padamyar FM', ],
+        'Russia': ['Radio Super Latina La Merced', 'RADIO LA FUERTE', ],
             }
     return data[country]
 
@@ -36,7 +37,7 @@ def step_impl(context, country_name):
     app = context.app = App()
     context.country_name = country_name
     #TODO: Make this return value accessible from app; feels wrong to stash it here.
-    context.actual_names = list(context.app.go())
+    context.actual_names = list(context.app.go(country_name))
 
 
 @then("I get a convenient list of all stations from (?P<country_name>.*)\.?")
@@ -48,11 +49,11 @@ def step_impl(context, country_name):
     assert country_name == context.country_name
     assert (actual_names is not None)
     assert (len(actual_names) > 1)  # countries in test should have > 1... maybe. (Reconsider.)
+    print(actual_names)
     expected_names = expected_station_names_for(country_name)
     # *Doesn't work: assert ([(the_name in actual_names) for the_name in expected_names])
     for the_name in expected_names:
         assert the_name in actual_names, "Not present: {}".format(the_name)
-                 # assert (expected_names[0] in actual_names)
+        # assert (expected_names[0] in actual_names)
     # assert ('Radio Super Latina La Merced' in actual_names)
     # assert ('RADIO LA FUERTE' in actual_names)
-    print(actual_names)

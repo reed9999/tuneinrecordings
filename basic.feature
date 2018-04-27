@@ -9,3 +9,6 @@ Feature: Basic functionality of whatever intersectional queries I want to make o
   Scenario: Retrieve simple country list
     When I pass in the country Peru
     Then I get a convenient list of all stations from Peru
+
+    When I pass in the country Myanmar
+    Then I get a convenient list of all stations from Myanmar

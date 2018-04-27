@@ -7,5 +7,5 @@ Feature: Basic functionality of whatever intersectional queries I want to make o
     Then I get a convenient list of all stations matching both language and genre
 
   Scenario: Retrieve simple country list
-    When I pass in a country
-    Then I get a convenient list of all stations from that country
+    When I pass in the country Peru
+    Then I get a convenient list of all stations from Peru

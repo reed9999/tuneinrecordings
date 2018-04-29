@@ -3,7 +3,7 @@
 
 from lxml import html
 import requests
-class TuneInUtilApp():
+class TuneInRecordingsApp():
 
     def __init__(self):
         self.country = None

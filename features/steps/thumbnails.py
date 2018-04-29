@@ -44,7 +44,7 @@ def step_impl(context, testbed):
     :type context: behave.runner.Context
     """
     assert os.path.isfile(os.path.join(testbed, "thumbnails.html"))
-    with file.open(testbed, "thumbnails.html") as f:
+    with open(os.path.join(testbed, "thumbnails.html"), 'r') as f:
         assert f
 
 @then("I get an HTML file allowing me to view all thumbnails in (?P<testbed>[^ ]*) and subdirs\.?")
@@ -52,5 +52,5 @@ def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.scenario.skip()
 

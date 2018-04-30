@@ -67,17 +67,17 @@ def step_impl(context, testbed):
     :type context: behave.runner.Context
     """
     assert os.path.isfile(os.path.join(testbed, "thumbnails.html"))
-    with open(os.path.join(testbed, "thumbnails.html"), 'r') as f:
+    with open(os.path.join("thumbnails.html"), 'r') as f:
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
         assert_all_items_in(
-            [   '1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
-                '1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
-                '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
-                '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+            [   '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image'.format(testbed),
+                '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
+                '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
+                '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
             ], img_srcs)
-        assert 'Image for recording 1521320898.1627' in img_alts
+        assert 'Image named {}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed) in img_alts
 
 
 @then("I get an HTML file allowing me to view all thumbnails in (?P<testbed>[^ ]*) and subdirs\.?")

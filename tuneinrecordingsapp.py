@@ -4,25 +4,29 @@
 OUTPUT_FILENAME = "thumbnails.html"
 import os
 import django.template as dtl
+import glob
 
 class TuneInRecordingsApp():
 
+    BASE_DIR = 'tests/testbed/recordings'
     def __init__(self):
         pass
 
     def go(self):
-        BASE_DIR = 'tests/testbed/recordings'
-        with open(os.path.join(BASE_DIR, OUTPUT_FILENAME), "w") as f:
-            f.write("""
-            <body>
-            <h1>1521320898.1627</h1>
-                <img src="1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image" 
-                    alt="Image for recording 1521320898.1627" />
-            <h1>1521323051.57557</h1>
-                <img src="1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image" 
-                    alt="Image for recording 1521323051.57557" />
-                <img src="1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image" 
-                    alt="Image for recording 1521323051.57557" /> <!-- obv not unique alt -->
-            </body>
-            """)
+        BASE_DIR = self.__class__.BASE_DIR
+        image_files = []
+        for directory in glob.glob(os.path.join(BASE_DIR, "*")):
+            for image in glob.glob(os.path.join(directory, "*.image")):
+                image_files.append(image)
+
+        with open(OUTPUT_FILENAME, "w") as f:
+            #Eventually this should be templated, perhaps with Django templates.
+            f.write("<body>")
+            for i in image_files:
+                f.write("""
+                <h1>{}</h1>
+                <img src="{}" 
+                    alt="Image named {}" />
+                    """.format(i, i, i))
+            f.write("</body>")
 

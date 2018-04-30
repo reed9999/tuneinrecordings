@@ -3,6 +3,8 @@
 
 OUTPUT_FILENAME = "thumbnails.html"
 import os
+import django.template as dtl
+
 class TuneInRecordingsApp():
 
     def __init__(self):
@@ -11,5 +13,5 @@ class TuneInRecordingsApp():
     def go(self):
         BASE_DIR = 'tests/testbed/recordings'
         with open(os.path.join(BASE_DIR, OUTPUT_FILENAME), "w") as f:
-            pass
+            f.write("0x00")
 

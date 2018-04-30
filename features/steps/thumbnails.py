@@ -51,8 +51,8 @@ def all_imgs_in(the_file):
     # sure it's worth sacrificing readability for Pythonicity
     rv = []
     for one_list_of_attributes in all_attributes_as_2d_list:
-        src = [v for (k, v) in one_list_of_attributes if k == 'src']
-        alt = [v for (k, v) in one_list_of_attributes if k == 'alt']
+        src = [v for (k, v) in one_list_of_attributes if k == 'src'][0]
+        alt = [v for (k, v) in one_list_of_attributes if k == 'alt'][0]
         rv.append({'src': src, 'alt': alt})
 
     return rv

@@ -13,5 +13,10 @@ class TuneInRecordingsApp():
     def go(self):
         BASE_DIR = 'tests/testbed/recordings'
         with open(os.path.join(BASE_DIR, OUTPUT_FILENAME), "w") as f:
-            f.write("0x00")
+            f.write("""
+            <body>
+                <img src="xyz" alt="Some XYZ image" />
+                <img src="abc" alt="Some ABC image" />
+            </body>
+            """)
 

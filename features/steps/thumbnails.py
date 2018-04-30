@@ -57,6 +57,9 @@ def all_imgs_in(the_file):
         rv.append({'src': src, 'alt': alt})
     return rv
 
+def assert_all_items_in(list_of_expected, actual_list):
+    for item in list_of_expected:
+        assert item in actual_list, "Not in the list of actuals: {}".format(item)
 
 @then("I get an HTML file allowing me to view all thumbnails in (?P<testbed>[^ ]*)\.?")
 def step_impl(context, testbed):
@@ -68,9 +71,12 @@ def step_impl(context, testbed):
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
-        assert '1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
-        assert '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
-        assert '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
+        assert_all_items_in(
+            [   '1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
+                '1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
+                '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+                '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+            ], img_srcs)
         assert 'Image for recording 1521320898.1627' in img_alts
 
 

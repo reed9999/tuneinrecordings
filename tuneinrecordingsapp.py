@@ -15,8 +15,14 @@ class TuneInRecordingsApp():
         with open(os.path.join(BASE_DIR, OUTPUT_FILENAME), "w") as f:
             f.write("""
             <body>
-                <img src="xyz" alt="Some XYZ image" />
-                <img src="abc" alt="Some ABC image" />
+            <h1>1521320898.1627</h1>
+                <img src="1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image" 
+                    alt="Image for recording 1521320898.1627" />
+            <h1>1521323051.57557</h1>
+                <img src="1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image" 
+                    alt="Image for recording 1521323051.57557" />
+                <img src="1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image" 
+                    alt="Image for recording 1521323051.57557" /> <!-- obv not unique alt -->
             </body>
             """)
 

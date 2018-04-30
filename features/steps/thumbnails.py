@@ -47,14 +47,14 @@ def all_imgs_in(the_file):
     xpath = '//img'
     all_attributes_as_2d_list = [x.items() for x in tree.xpath(xpath)]
 
-    #There should be a nested-comprehension way to do this although I'm not
-    # sure it's worth sacrificing readability for Pythonicity
+    #There should be a way to keep doing this with nested comprehensions
+    # although I'm not sure it's worth sacrificing readability for Pythonicity
     rv = []
     for one_list_of_attributes in all_attributes_as_2d_list:
+        #Does Python have an equivalent to ruby's "select" on a list?
         src = [v for (k, v) in one_list_of_attributes if k == 'src'][0]
         alt = [v for (k, v) in one_list_of_attributes if k == 'alt'][0]
         rv.append({'src': src, 'alt': alt})
-
     return rv
 
 
@@ -67,8 +67,11 @@ def step_impl(context, testbed):
     with open(os.path.join(testbed, "thumbnails.html"), 'r') as f:
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
-        assert 'xyz' in img_srcs
-        assert 'abc' in img_srcs
+        img_alts = [i['alt'] for i in img_dicts]
+        assert '1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
+        assert '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
+        assert '1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image' in img_srcs
+        assert 'Image for recording 1521320898.1627' in img_alts
 
 
 @then("I get an HTML file allowing me to view all thumbnails in (?P<testbed>[^ ]*) and subdirs\.?")

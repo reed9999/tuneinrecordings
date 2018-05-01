@@ -18,14 +18,14 @@ def step_impl(context):
     if os.path.isfile(dir + "/thumbnails.html"):
         os.remove(dir + "/thumbnails.html")
 
-@when("Everything is set up in (?P<testbed>[^ ]*)")
+@given("Everything is set up in (?P<testbed>[^ ]*)")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
     pass
 
-@when("Everything is set up in (?P<testbed>[^ ]*) and subdirs")
+@given("Everything is set up in (?P<testbed>[^ ]*) and subdirs")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
@@ -90,7 +90,7 @@ def step_impl(context, output_file, testbed):
             ], img_srcs)
         assert 'Image named {}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed) in img_alts
 
-@then("I get an HTML file (?P<output_file>.*) with relative paths allowing me to view all thumbnails in (?P<testbed>.*) and subdirs\.?")
+@then("I get an HTML file (?P<output_file>.*) allowing me to view all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
     """
     :type context: behave.runner.Context

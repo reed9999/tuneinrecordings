@@ -1,14 +1,35 @@
 import os
+
 from behave import *
+from behave import fixture
 from hamcrest import assert_that, equal_to
-from tuneinrecordingsapp import TuneInRecordingsApp as App
 from lxml import html
+from shutil import copyfile, copy2, copytree, rmtree
+
+from tuneinrecordingsapp import TuneInRecordingsApp as App
 
 use_step_matcher("re")
 
-@fixture    #Not yet implemented
-def app():
-    print ("I should set up the app")
+@fixture
+def app(context):
+    # -- SETUP-FIXTURE PART:
+    context.app = App()
+    yield context.app
+    # -- CLEANUP-FIXTURE <....>: --- can I modify this comment at will?
+    print("No shutdown needed")
+
+
+@fixture
+def browser_firefox(context, timeout=30, **kwargs):
+    """Why on earth is this called Firefox? Because that's the example in behave
+    docs and I want to troubleshoot with the closest match possible. This has nothing to do
+    with Firefox itself."""
+    # -- SETUP-FIXTURE PART:
+    context.browser = App()
+    print("This is itentionally stupid")
+    yield context.browser
+    # -- CLEANUP-FIXTURE <....>: --- can I modify this comment at will?
+    print("No shutdown needed")
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -23,7 +44,12 @@ def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    pass
+    print ("First do manual setup, which I will eventually automate. See all-testbed.txt")
+    try:
+        rmtree("tests/testbed/recordings/2018-03")
+    except:
+        print("tests/testbed/recordings/2018-03 DNE")
+    copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
 
 @given("Everything is set up in (?P<testbed>[^ ]*) and subdirs")
 def step_impl(context, testbed):
@@ -46,7 +72,7 @@ def step_impl(context, testbed):
     :type context: behave.runner.Context
     """
     #context.testbed = testbed
-    pass
+    context.scenario.skip()
 
 def all_imgs_in(the_file):
     """
@@ -92,6 +118,34 @@ def step_impl(context, output_file, testbed):
 
 @then("I get an HTML file (?P<output_file>.*) allowing me to view all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
+    """
+    :type context: behave.runner.Context
+    """
+    context.scenario.skip()
+
+
+
+#### Getting too meta, but a very in-my-face way to track my own knowledge gap.
+@fixture
+def arbitrary_fixture(context):
+    # -- SETUP-FIXTURE PART:
+    context.app_from_arbitrary_fixture = App()
+    yield context.app_from_arbitrary_fixture
+    # -- CLEANUP-FIXTURE <....>: --- can I modify this comment at will?
+    del context.app_from_arbitrary_fixture
+    print("Not much shutdown needed")
+
+
+@when("I run a test with a fixture")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("The test should use the fixture\.")
+def step_impl(context):
     """
     :type context: behave.runner.Context
     """

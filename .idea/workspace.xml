@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
+    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="Messy test changes but copy testbed sorta works.&#10;&#10;Trying to learn to use fixtures in behave, but sorta left that part unfinished and messy. Ignore the Firef.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/features/steps/thumbnails.py" afterPath="$PROJECT_DIR$/features/steps/thumbnails.py" />
       <change beforePath="$PROJECT_DIR$/features/thumbnails.feature" afterPath="$PROJECT_DIR$/features/thumbnails.feature" />
+      <change beforePath="$PROJECT_DIR$/tuneinrecordingsapp.py" afterPath="$PROJECT_DIR$/tuneinrecordingsapp.py" />
     </list>
     <ignored path="tests/testbed/recordings/" />
     <ignored path="thumbnails.html" />
@@ -18,17 +19,18 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/tunein_util$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524697225076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/tuneinrecordings$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524983219687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$philip.coverage" NAME="philip Coverage Results" MODIFIED="1525157292041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525156904355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525297149031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="tuneinrecordingsapp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#202#211#0" expanded="true" />
               </folding>
@@ -39,28 +41,8 @@
       <file leaf-file-name="thumbnails.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matchers.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2136">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31608">
-              <caret line="1328" column="0" lean-forward="false" selection-start-line="1328" selection-start-column="0" selection-end-line="1328" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -69,14 +51,13 @@
       <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="554">
+              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1237#1899#0" expanded="false" />
-                <element signature="e#1237#1266#1" expanded="false" />
-                <element signature="e#1407#1475#0" expanded="false" />
-                <element signature="e#1636#1885#0" expanded="false" />
+                <element signature="e#2248#2277#1" expanded="false" />
+                <element signature="e#2418#2486#0" expanded="false" />
+                <element signature="e#2647#2896#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,9 +84,12 @@
       <find>image',</find>
       <find>ling</find>
       <find>join</find>
-      <find>isfile</find>
       <find>testbed</find>
       <find>with relative paths</find>
+      <find>isfile</find>
+      <find>BASE_DIR</find>
+      <find>go(</find>
+      <find>skip</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -121,6 +105,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="PJR" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -129,6 +118,7 @@
         <option value="$PROJECT_DIR$/tuneinutilapp.py" />
         <option value="$PROJECT_DIR$/steps/basic.py" />
         <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
+        <option value="$PROJECT_DIR$/philip.py" />
         <option value="$PROJECT_DIR$/features/thumbnails.feature" />
         <option value="$PROJECT_DIR$/features/steps/thumbnails.py" />
       </list>
@@ -214,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Behave.thumbnails.feature">
     <configuration name="thumbnails.feature" type="PyBehaveRunConfigurationType" factoryName="Behave" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -229,9 +219,34 @@
       <WHAT_TO_RUN WHAT_TO_RUN="$PROJECT_DIR$/features/thumbnails.feature" />
       <option name="ADDITIONAL_ARGS" value="" />
     </configuration>
+    <configuration name="philip" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tunein-util" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/philip.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Behave.thumbnails.feature" />
+      <item index="1" class="java.lang.String" itemvalue="Python.philip" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Behave.thumbnails.feature" />
+        <item index="1" class="java.lang.String" itemvalue="Python.philip" />
+        <item index="2" class="java.lang.String" itemvalue="Behave.thumbnails.feature" />
       </list>
     </recent_temporary>
   </component>
@@ -347,38 +362,45 @@
       <option name="project" value="LOCAL" />
       <updated>1525156660164</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="REFACTORED: One of my @when should have been @given.&#10;&#10;Also the relative paths is an implementation feature. It should &quot;just work&quot; and I should test it from various places (although this is more a unit test than a behavior).">
+      <created>1525156978258</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1525156978258</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 32m 26s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.01 at 14h 54m 10s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 33m 21s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.01 at 14h 54m 17s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 34m 28s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.01 at 20h 29m 08s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 35m 08s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.01 at 20h 29m 59s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 35m 37s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 13h 18m 43s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 35m 48s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 13h 19m 00s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 35m 54s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 13h 20m 13s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 35m 56s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 14h 34m 17s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 36m 42s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 14h 37m 30s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.04.30 at 23h 41m 44s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.02 at 14h 39m 15s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
   </component>
@@ -390,7 +412,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2929293" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2929293" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -452,7 +474,8 @@
     <MESSAGE value="Fail: Testing for images not in the hard-coding. (+refactored)&#10;&#10;Again, the idea here is to test for a bit more functionality, to break the &quot;fake it til you make it&quot; (FITYMI) and force myself to" />
     <MESSAGE value="Pass: Basic functionality is there, though clearly in a messy HTML file.&#10;&#10;Next: Refactor, maybe." />
     <MESSAGE value="REFACTORED: Test steps; I should be requiring that relative paths work." />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTORED: Test steps; I should be requiring that relative paths work." />
+    <MESSAGE value="REFACTORED: One of my @when should have been @given.&#10;&#10;Also the relative paths is an implementation feature. It should &quot;just work&quot; and I should test it from various places (although this is more a unit test than a behavior)." />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTORED: One of my @when should have been @given.&#10;&#10;Also the relative paths is an implementation feature. It should &quot;just work&quot; and I should test it from various places (although this is more a unit test than a behavior)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,21 +502,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
-          <line>10</line>
+          <line>15</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
-          <line>84</line>
+          <line>110</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
-          <line>66</line>
+          <line>92</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PyBehaveRunConfigurationType">
@@ -649,26 +677,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/runner_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2136">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="217">
+          <caret line="411" column="0" lean-forward="false" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="803" column="0" lean-forward="false" selection-start-line="803" selection-start-column="0" selection-end-line="803" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/behave_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="309" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_bdd_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/philip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31608">
-          <caret line="1328" column="0" lean-forward="false" selection-start-line="1328" selection-start-column="0" selection-end-line="1328" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#202#211#0" expanded="true" />
           </folding>
@@ -677,22 +745,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="216">
+          <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="554">
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1237#1899#0" expanded="false" />
-            <element signature="e#1237#1266#1" expanded="false" />
-            <element signature="e#1407#1475#0" expanded="false" />
-            <element signature="e#1636#1885#0" expanded="false" />
+            <element signature="e#2248#2277#1" expanded="false" />
+            <element signature="e#2418#2486#0" expanded="false" />
+            <element signature="e#2647#2896#0" expanded="false" />
           </folding>
         </state>
       </provider>

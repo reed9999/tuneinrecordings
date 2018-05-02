@@ -14,8 +14,8 @@ IMAGE_FILE_AS_IMG_HTML = """
                     alt="Image named {image_filename}" style="width: 150px;"/>
                 """
 
+BASE_DIR = 'tests/testbed/recordings'
 class TuneInRecordingsApp():
-    BASE_DIR = 'tests/testbed/recordings'
 
     def __init__(self):
         pass
@@ -27,8 +27,8 @@ class TuneInRecordingsApp():
                 image_files.append(image)
         return image_files
 
-    def go(self):
-        image_files = self.__class__.pathed_image_filenames_in(self.__class__.BASE_DIR)
+    def go(self, directory=BASE_DIR):
+        image_files = self.__class__.pathed_image_filenames_in(directory)
 
         with open(OUTPUT_FILENAME, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)

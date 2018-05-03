@@ -9,15 +9,6 @@ from tuneinrecordingsapp import TuneInRecordingsApp as App
 
 use_step_matcher("re")
 
-def make_testbed_writeable():
-    path = "tests/testbed"
-    for root, dirs, files in os.walk(path):
-        #https://stackoverflow.com/q/2853723/742573
-        for d in dirs:
-            os.chmod(os.path.join(root, d), 0o755)
-        for f in files:
-            os.chmod(os.path.join(root, f), 0o755)
-
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -27,16 +18,14 @@ def step_impl(context):
     if os.path.isfile(dir + "/thumbnails.html"):
         os.remove(dir + "/thumbnails.html")
 
-### TODO: Less parametrized, but it's for troubleshooting because it doesn't seem to recognize the parametrized one.
-@step("Everything is set up in tests/testbed/recordings")
-def step_impl(context):
+@given("Everything is set up in (?P<testbed>[^ ]*)")
+def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
     testbed = "tests/testbed"
     dst = os.path.join(testbed, "recordings")
-    store = os.path.join(testbed, "__store")
-    # make_testbed_writeable() # no longer needed; I'm keeping my own __store, much better.
+    store = os.path.join(testbed, "__store/recordings")
     for fn in glob.glob(pathname=os.path.join(store, "15*")):
         dst_file = os.path.join(dst, os.path.basename(fn))
         try:
@@ -48,33 +37,30 @@ def step_impl(context):
         copytree(fn, dst_file)
 
 
-@given("Everything is set up in (?P<testbed>[^ ]*)")
-def step_impl(context, testbed):
-    """
-    :type context: behave.runner.Context
-    """
-    #TODO refactor. This shouldn't include 2018-03 which is subdirs should it?
-    # make_testbed_writeable()
-    path = "tests/testbed/recordings/2018-03"
-
-    context.scenario.skip()
-    return
-
-    try:
-        rmtree(path)
-    except FileNotFoundError:
-        print("{} DNE".format(path))
-    except:
-        raise
-    copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
+# @given("Everything is set up in (?P<testbed>[^ ]*)")
+# def step_impl(context, testbed):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     #TODO refactor. This shouldn't include 2018-03 which is subdirs should it?
+#     path = "tests/testbed/recordings/2018-03"
+#
+#     context.scenario.skip()
+#     return
+#
+#     try:
+#         rmtree(path)
+#     except FileNotFoundError:
+#         print("{} DNE".format(path))
+#     except:
+#         raise
+#     copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
 
 @given("Everything is set up in (?P<testbed>[^ ]*) and subdirs")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    # make_testbed_writeable()
-
     context.scenario.skip()
     return
 

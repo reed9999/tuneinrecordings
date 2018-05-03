@@ -94,7 +94,7 @@ def assert_all_items_in(list_of_expected, actual_list):
     for item in list_of_expected:
         assert item in actual_list, "Not in the list of actuals: {}".format(item)
 
-@then("I get an HTML file (?P<output_file>.*) allowing me to view all thumbnails in (?P<testbed>[^ ]*)\.?")
+@then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>[^ ]*)\.?")
 def step_impl(context, output_file, testbed):
     """
     :type context: behave.runner.Context

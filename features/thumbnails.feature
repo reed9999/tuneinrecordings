@@ -19,14 +19,8 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
     And Individual recordings are present in tests/testbed/recordings
     When I run the app
 #    Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings
-    Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings
-
-  Scenario: Same as above but the dot at the end makes it fail which makes no sense
-    Given There are no lingering output files
-    And Individual recordings are present in tests/testbed/recordings
-    When I run the app
-#    Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings
     Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings.
+
 
   Scenario: Retrieve thumbnails for hardcoded recursive path
     Given There are no lingering output files

@@ -1,4 +1,5 @@
 import os
+import glob
 from behave import fixture, use_fixture
 from hamcrest import assert_that, equal_to
 from lxml import html
@@ -8,21 +9,15 @@ from tuneinrecordingsapp import TuneInRecordingsApp as App
 
 use_step_matcher("re")
 
+def make_testbed_writeable():
+    path = "tests/testbed"
+    for root, dirs, files in os.walk(path):
+        #https://stackoverflow.com/q/2853723/742573
+        for d in dirs:
+            os.chmod(os.path.join(root, d), 0o755)
+        for f in files:
+            os.chmod(os.path.join(root, f), 0o755)
 
-
-#
-#
-# @fixture
-# def browser_firefox(context, timeout=30, **kwargs):
-#     """Why on earth is this called Firefox? Because that's the example in behave
-#     docs and I want to troubleshoot with the closest match possible. This has nothing to do
-#     with Firefox itself."""
-#     # -- SETUP-FIXTURE PART:
-#     context.browser = App()
-#     print("This is itentionally stupid")
-#     yield context.browser
-#     # -- CLEANUP-FIXTURE <....>: --- can I modify this comment at will?
-#     print("No shutdown needed")
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -32,13 +27,39 @@ def step_impl(context):
     if os.path.isfile(dir + "/thumbnails.html"):
         os.remove(dir + "/thumbnails.html")
 
+### TODO: Less parametrized, but it's for troubleshooting because it doesn't seem to recognize the parametrized one.
+@step("Everything is set up in tests/testbed/recordings")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    testbed = "tests/testbed"
+    dst = os.path.join(testbed, "recordings")
+    store = os.path.join(testbed, "__store")
+    # make_testbed_writeable() # no longer needed; I'm keeping my own __store, much better.
+    for fn in glob.glob(pathname=os.path.join(store, "15*")):
+        dst_file = os.path.join(dst, os.path.basename(fn))
+        try:
+            rmtree(dst_file)
+        except FileNotFoundError:
+            print("{} DNE".format(dst_file))
+        except:
+            raise
+        copytree(fn, dst_file)
+
+
 @given("Everything is set up in (?P<testbed>[^ ]*)")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    #TODO refactor. This shouldn't include 2018-03 which is subdirs.
+    #TODO refactor. This shouldn't include 2018-03 which is subdirs should it?
+    # make_testbed_writeable()
     path = "tests/testbed/recordings/2018-03"
+
+    context.scenario.skip()
+    return
+
     try:
         rmtree(path)
     except FileNotFoundError:
@@ -52,16 +73,20 @@ def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    pass
-    # path = "tests/testbed/recordings/2018-03"
-    # try:
-    #     rmtree(path)
-    # except FileNotFoundError:
-    #     print("{} DNE".format(path))
-    # except:
-    #     raise
-    #Failing on permissions -- somehow I've misorganized this.
-    # copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
+    # make_testbed_writeable()
+
+    context.scenario.skip()
+    return
+
+    path = "tests/testbed/recordings/2018-03"
+    try:
+        rmtree(path)
+    except FileNotFoundError:
+        print("{} DNE".format(path))
+    except:
+        raise
+    # Failing on permissions -- somehow I've misorganized this.
+    copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
 
 
 @step("I run the app")
@@ -101,7 +126,6 @@ def all_imgs_in(the_file):
 def assert_all_items_in(list_of_expected, actual_list):
     for item in list_of_expected:
         assert item in actual_list, "Not in the list of actuals: {}".format(item)
-
 
 @then("I get an HTML file (?P<output_file>.*) allowing me to view all thumbnails in (?P<testbed>[^ ]*)\.?")
 def step_impl(context, output_file, testbed):
@@ -156,3 +180,30 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     pass
+
+
+
+
+# behave correctly recognizes as ambiguous. Why not the others?
+# @then("I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     pass
+
+### TODO: Less parametrized, but it's for troubleshooting because it doesn't seem to recognize the parametrized one.
+@step("Everything is set up in tests/testbed/another-path and subdirs")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+# behave correctly recognizes as ambiguous. Why not the others?
+# @when("I run the app passing in the name tests/testbed/another-path")
+# def step_impl(context):
+#     """
+#     :type context: behave.runner.Context
+#     """
+#     pass

@@ -11,19 +11,12 @@ def app(context):
     # -- CLEANUP-FIXTURE PART: --- can I modify this comment at will?
     print("No shutdown needed")
 
-def make_testbed_writeable():
-    path = "tests/testbed"
-    for root, dirs, files in os.walk(path):
-        #https://stackoverflow.com/q/2853723/742573
-        for d in dirs:
-            os.chmod(os.path.join(root, d), 0o755)
-        for f in files:
-            os.chmod(os.path.join(root, f), 0o755)
 
 def before_all(context):
     #use_fixture(app, context)
     #better to use a fixture....
-    make_testbed_writeable()
+    # make_testbed_writeable() #refactored for the moment
+    pass
 
 def before_tag(context, tag):
     if tag == "app":

@@ -13,10 +13,12 @@ use_step_matcher("re")
 @given("There are no lingering output files")
 def step_impl(context):
     if os.path.isfile("./thumbnails.html"):
-        os.remove("./thumbnails.html")
+        # os.remove("./thumbnails.html")
+        pass
     dir = "tests/testbed/recordings"
     if os.path.isfile(dir + "/thumbnails.html"):
-        os.remove(dir + "/thumbnails.html")
+        # os.remove(dir + "/thumbnails.html")
+        pass
 
 @given("Individual recordings are present in (?P<testbed>[^ ]*)")
 def step_impl(context, testbed):
@@ -42,18 +44,17 @@ def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    print("Not skipping but not set up well")
-    return
 
-    path = "tests/testbed/recordings/2018-03"
+    testbed = "tests/testbed"
+    dst = os.path.join(testbed, "recordings/2018-03")
+    store = os.path.join(testbed, "__store/recordings/2018-03")
     try:
-        rmtree(path)
+        rmtree(dst)
     except FileNotFoundError:
-        print("{} DNE".format(path))
+        print("{} DNE".format(dst))
     except:
         raise
-    # Failing on permissions -- somehow I've misorganized this.
-    copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
+    copytree(store, dst)
 
 
 @step("I run the app")
@@ -114,12 +115,24 @@ def step_impl(context, output_file, testbed):
             ], img_srcs)
         assert 'Image named {}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed) in img_alts
 
-@then("I get an HTML file (?P<output_file>.*) allowing me to view all thumbnails in (?P<testbed>.*) and subdirs\.?")
+@then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
     """
     :type context: behave.runner.Context
     """
-    context.scenario.skip()
+    #TODO possibly REFACTOR
+    assert os.path.isfile(output_file)
+    assert os.path.isdir(testbed)
+    with open(output_file, 'r') as f:
+        img_dicts = all_imgs_in(f)
+        img_srcs = [i['src'] for i in img_dicts]
+        img_alts = [i['alt'] for i in img_dicts]
+        assert_all_items_in(
+            [   '{}2018-03/03-16-to-31/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
+                '{}2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed),
+                '{}2018-03/special/1522427391.42871/8c4c2db15c4d3ca851b2a58c971b2fce.image'.format(testbed),
+            ], img_srcs)
+        assert '{}2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed) in img_alts
 
 
 

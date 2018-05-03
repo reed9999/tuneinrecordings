@@ -17,20 +17,20 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
 #  @fixture.browser.firefox #Doesn't seem to be read. Why Firefox? See steps
   Scenario: Retrieve thumbnails for hardcoded non-recursive path
     Given There are no lingering output files
-    And Everything is set up in tests/testbed/recordings
+    And Individual recordings are present in tests/testbed/recordings
     When I run the app
 #    Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings
     Then I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings
 
   Scenario: Retrieve thumbnails for hardcoded recursive path
     Given There are no lingering output files
-    And Everything is set up in tests/testbed/another-path and subdirs
+    And Subdirs with recordings are present in tests/testbed/recordings
     When I run the app
     Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings and subdirs
 
   Scenario: Retrieve thumbnails for arbitrary recursive path
     Given There are no lingering output files
-    And Everything is set up in tests/testbed/another-path and subdirs
+    And Subdirs with recordings are present in tests/testbed/another-path
     When I run the app passing in the name tests/testbed/another-path
     Then I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/another-path and subdirs
 #    Then I get an HTML file tests/output/thumbnails.html with relative paths allowing me to view all thumbnails in tests/testbed/another-path and subdirs

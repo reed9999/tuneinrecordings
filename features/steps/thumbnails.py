@@ -18,7 +18,7 @@ def step_impl(context):
     if os.path.isfile(dir + "/thumbnails.html"):
         os.remove(dir + "/thumbnails.html")
 
-@given("Everything is set up in (?P<testbed>[^ ]*)")
+@given("Individual recordings are present in (?P<testbed>[^ ]*)")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
@@ -37,31 +37,12 @@ def step_impl(context, testbed):
         copytree(fn, dst_file)
 
 
-# @given("Everything is set up in (?P<testbed>[^ ]*)")
-# def step_impl(context, testbed):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     #TODO refactor. This shouldn't include 2018-03 which is subdirs should it?
-#     path = "tests/testbed/recordings/2018-03"
-#
-#     context.scenario.skip()
-#     return
-#
-#     try:
-#         rmtree(path)
-#     except FileNotFoundError:
-#         print("{} DNE".format(path))
-#     except:
-#         raise
-#     copytree("/home/philip/Music/Tunein/2018-03", "tests/testbed/recordings/2018-03")
-
-@given("Everything is set up in (?P<testbed>[^ ]*) and subdirs")
+@given("Subdirs with recordings are present in (?P<testbed>[^ ]*)")
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
     """
-    context.scenario.skip()
+    print("Not skipping but not set up well")
     return
 
     path = "tests/testbed/recordings/2018-03"

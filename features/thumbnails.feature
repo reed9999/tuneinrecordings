@@ -13,8 +13,8 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
   #These are more like unit testcases but for while I'm getting a feel for BDD I think
   # it's OK to start with this kind of stuff.
 
-#  @fixture.app #Doesn't seem to be read
-  @fixture.browser.firefox #Doesn't seem to be read. Why Firefox? See steps
+  @fixture.app #Doesn't seem to be read
+#  @fixture.browser.firefox #Doesn't seem to be read. Why Firefox? See steps
   Scenario: Retrieve thumbnails for hardcoded non-recursive path
     Given There are no lingering output files
     And Everything is set up in tests/testbed/recordings

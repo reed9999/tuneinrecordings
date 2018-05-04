@@ -41,12 +41,3 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
     When I run the app passing in the name tests/testbed/another-path
     Then I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/another-path and subdirs
 #    Then I get an HTML file tests/output/thumbnails.html with relative paths allowing me to view all thumbnails including subdirs.
-
-  @fixture.app
-  Scenario: Using the fixture
-    This scenario is not even coupled with app implementation--it's test implementation!
-    Really it's just a fun way for me to track that I want to learn to get behave fixtures
-    working!
-
-    When I run a test with a fixture
-    Then The test should use the fixture.

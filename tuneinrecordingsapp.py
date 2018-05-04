@@ -14,13 +14,18 @@ IMAGE_FILE_AS_IMG_HTML = """
                     alt="Image named {image_filename}" style="width: 150px;"/>
                 """
 
-BASE_DIR = 'tests/testbed/recordings'
+DEFAULT_BASE_DIR = 'tests/testbed/recordings'
+DEFAULT_OUTPUT_FILE = './thumbnails.html'
 class TuneInRecordingsApp():
 
-    def __init__(self):
-        pass
+    def __init__(self, base_dir=None, output_file=None):
+        self._base_dir = (base_dir or DEFAULT_BASE_DIR)
+        self._output_file = (output_file or DEFAULT_OUTPUT_FILE)
+
     @classmethod
-    def pathed_image_filenames_in(cls, base_dir, xxrecursive=True):
+    def pathed_image_filenames_in(cls, base_dir, recursive=True):
+        if recursive == False:
+            raise RuntimeError("Not yet implemented: Non-recursive handling.")
         image_files = []
         for root, directories, files in os.walk(base_dir):
         # for directory in glob.glob(os.path.join(base_dir, "*")):
@@ -29,7 +34,8 @@ class TuneInRecordingsApp():
                     image_files.append(image)
         return image_files
 
-    def go(self, directory=BASE_DIR):
+    def go(self, directory=None, output_file=None):
+        directory = (directory or self._base_dir)
         image_files = self.__class__.pathed_image_filenames_in(directory)
 
         with open(OUTPUT_FILENAME, "w") as f:

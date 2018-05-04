@@ -152,32 +152,6 @@ def step_impl(context, output_file, testbed):
 
 
 
-#### Getting too meta, but a very in-my-face way to track my own knowledge gap.
-@fixture
-def arbitrary_fixture(context):
-    # -- SETUP-FIXTURE PART:
-    context.app_from_arbitrary_fixture = App()
-    yield context.app_from_arbitrary_fixture
-    # -- CLEANUP-FIXTURE <....>: --- can I modify this comment at will?
-    del context.app_from_arbitrary_fixture
-    print("Not much shutdown needed")
-
-
-@when("I run a test with a fixture")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then("The test should use the fixture\.")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
 
 
 

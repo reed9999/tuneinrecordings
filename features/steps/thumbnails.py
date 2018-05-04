@@ -9,6 +9,13 @@ from tuneinrecordingsapp import TuneInRecordingsApp as App
 
 use_step_matcher("re")
 
+#Wait to refactor until the tests all pass
+# TESTCASES_SRC1 = [   #Start externalizing the lazy way, but eventually the DRY way...
+#     '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
+#     '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
+#     '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+#     '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+# ]
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -61,6 +68,9 @@ def step_impl(context, testbed):
 def step_impl(context):
     """
     :type context: behave.runner.Context
+
+    Step (which should probably really be a conventional unit test instead) to run the app
+    without any parameter.
     """
     app = context.app = App()
     app.go()
@@ -69,13 +79,17 @@ def step_impl(context):
 def step_impl(context, testbed):
     """
     :type context: behave.runner.Context
+
+    Step (which should probably really be a conventional unit test instead) to run the app
+    with a stated parameter.
     """
     #context.testbed = testbed
     context.scenario.skip()
 
 def all_imgs_in(the_file):
     """
-    :returns dict
+    :returns dict of the src and alt attributes for all img tags in the file given
+    This is a helper for tests that verify img tags are as expected in the file.
     """
     tree = html.fromstring(the_file.read())
     xpath = '//img'
@@ -128,11 +142,13 @@ def step_impl(context, output_file, testbed):
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
         assert_all_items_in(
-            [   '{}2018-03/03-16-to-31/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
-                '{}2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed),
-                '{}2018-03/special/1522427391.42871/8c4c2db15c4d3ca851b2a58c971b2fce.image'.format(testbed),
+            [   '{}/2018-03/03-16-to-31/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
+                '{}/2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed),
+                '{}/2018-03/special/1522427391.42871/8c4c2db15c4d3ca851b2a58c971b2fce.image'.format(testbed),
             ], img_srcs)
-        assert '{}2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed) in img_alts
+        assert_all_items_in(
+            ['Image named {}/2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed)],
+            img_alts)
 
 
 
@@ -165,26 +181,10 @@ def step_impl(context):
 
 
 
-# behave correctly recognizes as ambiguous. Why not the others?
-# @then("I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     pass
-
-### TODO: Less parametrized, but it's for troubleshooting because it doesn't seem to recognize the parametrized one.
+### TODO: This is for troubleshooting because it doesn't seem to recognize the parametrized one.
 @step("Everything is set up in tests/testbed/another-path and subdirs")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
     pass
-
-# behave correctly recognizes as ambiguous. Why not the others?
-# @when("I run the app passing in the name tests/testbed/another-path")
-# def step_impl(context):
-#     """
-#     :type context: behave.runner.Context
-#     """
-#     pass

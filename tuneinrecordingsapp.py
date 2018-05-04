@@ -20,11 +20,13 @@ class TuneInRecordingsApp():
     def __init__(self):
         pass
     @classmethod
-    def pathed_image_filenames_in(cls, base_dir):
+    def pathed_image_filenames_in(cls, base_dir, xxrecursive=True):
         image_files = []
-        for directory in glob.glob(os.path.join(base_dir, "*")):
-            for image in glob.glob(os.path.join(directory, "*.image")):
-                image_files.append(image)
+        for root, directories, files in os.walk(base_dir):
+        # for directory in glob.glob(os.path.join(base_dir, "*")):
+            for directory in directories:
+                for image in glob.glob(os.path.join(root, directory, "*.image")):
+                    image_files.append(image)
         return image_files
 
     def go(self, directory=BASE_DIR):

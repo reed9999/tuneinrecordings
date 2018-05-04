@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
+    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="FAIL but the recursion test case more or less works.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/features/steps/thumbnails.py" afterPath="$PROJECT_DIR$/features/steps/thumbnails.py" />
-      <change beforePath="$PROJECT_DIR$/features/thumbnails.feature" afterPath="$PROJECT_DIR$/features/thumbnails.feature" />
+      <change beforePath="$PROJECT_DIR$/tuneinrecordingsapp.py" afterPath="$PROJECT_DIR$/tuneinrecordingsapp.py" />
     </list>
     <ignored path="tests/testbed/recordings/" />
     <ignored path="thumbnails.html" />
@@ -21,7 +21,7 @@
     <SUITE FILE_PATH="coverage/tuneinrecordings$philip.coverage" NAME="philip Coverage Results" MODIFIED="1525157292041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525389078872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525416736395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -29,19 +29,23 @@
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#202#211#0" expanded="true" />
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#314#562#0" expanded="false" />
+                <element signature="e#664#668#0" expanded="false" />
+                <element signature="e#1149#1329#0" expanded="false" />
+                <element signature="e#1421#1595#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thumbnails.feature" pinned="false" current-in-tab="true">
+      <file leaf-file-name="thumbnails.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="34" column="57" lean-forward="true" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state relative-caret-position="146">
+              <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -59,16 +63,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="117" column="22" lean-forward="true" selection-start-line="117" selection-start-column="22" selection-end-line="123" selection-end-column="38" />
+            <state relative-caret-position="366">
+              <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#2023#2052#1" expanded="false" />
-                <element signature="e#2193#2261#0" expanded="false" />
-                <element signature="e#2422#2671#0" expanded="false" />
+                <element signature="e#265#307#0" expanded="false" />
+                <element signature="e#746#984#0" expanded="false" />
+                <element signature="e#794#839#0" expanded="false" />
+                <element signature="e#934#984#0" expanded="false" />
+                <element signature="e#1089#1580#0" expanded="false" />
+                <element signature="e#1089#1141#1" expanded="false" />
+                <element signature="e#1344#1580#0" expanded="false" />
+                <element signature="e#1688#2035#0" expanded="false" />
+                <element signature="e#1688#1740#1" expanded="false" />
+                <element signature="e#2089#2303#0" expanded="false" />
+                <element signature="e#2089#2260#1" expanded="false" />
+                <element signature="e#2404#2636#0" expanded="false" />
+                <element signature="e#2404#2577#1" expanded="false" />
+                <element signature="e#2669#3477#0" expanded="false" />
+                <element signature="e#2669#2844#1" expanded="false" />
+                <element signature="e#2985#3053#0" expanded="false" />
+                <element signature="e#3214#3463#0" expanded="false" />
+                <element signature="e#3812#3864#1" expanded="false" />
+                <element signature="e#4151#4527#0" expanded="false" />
+                <element signature="e#4823#4875#1" expanded="false" />
+                <element signature="e#5843#6112#0" expanded="false" />
+                <element signature="e#6180#6241#0" expanded="false" />
+                <element signature="e#6180#6232#1" expanded="false" />
+                <element signature="e#6315#6376#0" expanded="false" />
+                <element signature="e#6315#6367#1" expanded="false" />
+                <element signature="e#6578#6639#0" expanded="false" />
+                <element signature="e#6578#6630#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -112,6 +139,9 @@
       <find>I get an</find>
       <find>not set</find>
       <find>allowing me</find>
+      <find>walk</find>
+      <find>os.walk</find>
+      <find>.format(testbed)</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -123,6 +153,7 @@
       <replace>output_file.write</replace>
       <replace>fn</replace>
       <replace>/</replace>
+      <replace>/2018</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -139,11 +170,11 @@
         <option value="$PROJECT_DIR$/basic.feature" />
         <option value="$PROJECT_DIR$/tuneinutilapp.py" />
         <option value="$PROJECT_DIR$/steps/basic.py" />
-        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
         <option value="$PROJECT_DIR$/philip.py" />
         <option value="$PROJECT_DIR$/features/environment.py" />
-        <option value="$PROJECT_DIR$/features/steps/thumbnails.py" />
         <option value="$PROJECT_DIR$/features/thumbnails.feature" />
+        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
+        <option value="$PROJECT_DIR$/features/steps/thumbnails.py" />
       </list>
     </option>
   </component>
@@ -441,55 +472,72 @@
       <option name="project" value="LOCAL" />
       <updated>1525387011475</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="FAIL as it should. Recursion and arbitrary output both NYI.">
+      <created>1525389122210</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1525389122210</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 33m 53s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 22h 59m 50s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 34m 50s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 00m 53s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 35m 31s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 01m 09s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 56m 09s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 03m 38s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 56m 15s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 04m 03s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 15h 56m 23s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 37m 33s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 16h 03m 06s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 37m 42s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 16h 04m 54s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 50m 04s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 16h 09m 17s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 51m 19s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.03 at 16h 11m 22s.xml">
+    <history-entry file="thumbnails_feature - 2018.05.03 at 23h 52m 25s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="227" y="29" width="1922" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -499,7 +547,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -554,7 +601,9 @@
     <MESSAGE value="Incremental-Better step names." />
     <MESSAGE value="FAIL. Why does only the optional period at the end invoke the step?" />
     <MESSAGE value="PASS (with too much skipping). Bug fix: greedy group was catching period.&#10;&#10;Fixed the regex to disallow periods in the directory name although that may not be ideal either." />
-    <option name="LAST_COMMIT_MESSAGE" value="PASS (with too much skipping). Bug fix: greedy group was catching period.&#10;&#10;Fixed the regex to disallow periods in the directory name although that may not be ideal either." />
+    <MESSAGE value="FAIL as it should. Recursion and arbitrary output both NYI." />
+    <MESSAGE value="FAIL but the recursion test case more or less works." />
+    <option name="LAST_COMMIT_MESSAGE" value="FAIL but the recursion test case more or less works." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,22 +633,42 @@
           <line>22</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
-          <line>105</line>
+          <line>119</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tuneinrecordingsapp.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tuneinrecordingsapp.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PyBehaveRunConfigurationType">
-        <watch expression="glob.glob(pathname=os.path.join(store, &quot;15*&quot;))" language="Python" />
+        <watch expression="[i for i in os.walk(base_dir)]" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>[i for i in os.walk(base_dir)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.walk(base_dir)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>glob.glob(pathname=os.path.join(store, &quot;15*&quot;))</expression-string>
         <language-id>Python</language-id>
@@ -640,16 +709,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>[node.text for node in (tree.xpath('//div[@id=&quot;container-1&quot;]//div[text()]'))]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>print(tree.xpath('//div[@id=&quot;container-1&quot;]//div[text()]'))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -658,7 +717,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#202#211#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
+            <element signature="e#664#668#0" expanded="false" />
+            <element signature="e#1149#1329#0" expanded="false" />
+            <element signature="e#1421#1595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,16 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/step_registry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -832,24 +885,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="117" column="22" lean-forward="true" selection-start-line="117" selection-start-column="22" selection-end-line="123" selection-end-column="38" />
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#2023#2052#1" expanded="false" />
-            <element signature="e#2193#2261#0" expanded="false" />
-            <element signature="e#2422#2671#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
+            <element signature="e#664#668#0" expanded="false" />
+            <element signature="e#1149#1329#0" expanded="false" />
+            <element signature="e#1421#1595#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="34" column="57" lean-forward="true" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+        <state relative-caret-position="146">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+          <folding>
+            <element signature="e#265#307#0" expanded="false" />
+            <element signature="e#746#984#0" expanded="false" />
+            <element signature="e#794#839#0" expanded="false" />
+            <element signature="e#934#984#0" expanded="false" />
+            <element signature="e#1089#1580#0" expanded="false" />
+            <element signature="e#1089#1141#1" expanded="false" />
+            <element signature="e#1344#1580#0" expanded="false" />
+            <element signature="e#1688#2035#0" expanded="false" />
+            <element signature="e#1688#1740#1" expanded="false" />
+            <element signature="e#2089#2303#0" expanded="false" />
+            <element signature="e#2089#2260#1" expanded="false" />
+            <element signature="e#2404#2636#0" expanded="false" />
+            <element signature="e#2404#2577#1" expanded="false" />
+            <element signature="e#2669#3477#0" expanded="false" />
+            <element signature="e#2669#2844#1" expanded="false" />
+            <element signature="e#2985#3053#0" expanded="false" />
+            <element signature="e#3214#3463#0" expanded="false" />
+            <element signature="e#3812#3864#1" expanded="false" />
+            <element signature="e#4151#4527#0" expanded="false" />
+            <element signature="e#4823#4875#1" expanded="false" />
+            <element signature="e#5843#6112#0" expanded="false" />
+            <element signature="e#6180#6241#0" expanded="false" />
+            <element signature="e#6180#6232#1" expanded="false" />
+            <element signature="e#6315#6376#0" expanded="false" />
+            <element signature="e#6315#6367#1" expanded="false" />
+            <element signature="e#6578#6639#0" expanded="false" />
+            <element signature="e#6578#6630#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -117,8 +117,9 @@ def step_impl(context, output_file, testbed):
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
-        assert_all_items_in([ x.format(testbed) for x in TESTCASES_SRC1], img_srcs)
-        assert_all_items_in([ "Image named {}".format(x.format(testbed)) for x in TESTCASES_SRC1], img_alts)
+        full_list_of_absolute_src_paths = [ os.path.join("/home/philip/code/tuneinrecordings", x.format(testbed)) for x in TESTCASES_SRC1]
+        assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
+        assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
 
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
@@ -131,8 +132,9 @@ def step_impl(context, output_file, testbed):
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
-        assert_all_items_in([ x.format(testbed) for x in TESTCASES_SRC1], img_srcs)
-        assert_all_items_in([ "Image named {}".format(x.format(testbed)) for x in TESTCASES_SRC1], img_alts)
+        full_list_of_absolute_src_paths = [ os.path.join("/home/philip/code/tuneinrecordings", x.format(testbed)) for x in TESTCASES_SRC1]
+        assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
+        assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
 
 
 

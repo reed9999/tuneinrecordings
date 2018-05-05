@@ -19,7 +19,7 @@ def before_all(context):
     pass
 
 def before_tag(context, tag):
-    if tag == "app":
+    if tag == "fixture.app":
         use_fixture(app, context)
 
 def after_all(context):

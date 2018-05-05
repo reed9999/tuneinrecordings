@@ -28,10 +28,11 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
     When I run the app
     Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings and subdirs
 
+  @fixture.app
   Scenario: Retrieve thumbnails for hardcoded recursive path storing in arbitrary output file
     Given There are no lingering output files
     And Subdirs with recordings are present in tests/testbed/recordings
-    When I run the app
+    When I run the app with output file ./recordings/output/thumbnails.html
     #Really something like this should be default anyway.
     Then I get an HTML file ./recordings/output/thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings and subdirs
 

@@ -36,9 +36,10 @@ class TuneInRecordingsApp():
 
     def go(self, directory=None, output_file=None):
         directory = (directory or self._base_dir)
+        output_file = (output_file or self._output_file)
         image_files = self.__class__.pathed_image_filenames_in(directory)
 
-        with open(OUTPUT_FILENAME, "w") as f:
+        with open(output_file, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)
 
     @classmethod

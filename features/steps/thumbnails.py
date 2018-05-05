@@ -1,21 +1,17 @@
 import os
 import glob
-from behave import fixture, use_fixture
 from hamcrest import assert_that, equal_to
 from lxml import html
 from shutil import copyfile, copy2, copytree, rmtree
 
-from tuneinrecordingsapp import TuneInRecordingsApp as App
-
 use_step_matcher("re")
 
-#Wait to refactor until the tests all pass
-# TESTCASES_SRC1 = [   #Start externalizing the lazy way, but eventually the DRY way...
-#     '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
-#     '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
-#     '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
-#     '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
-# ]
+TESTCASES_SRC1 = [   #Start externalizing the lazy way, but eventually the DRY way...
+    '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
+    '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
+    '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+    '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
+]
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -72,7 +68,7 @@ def step_impl(context):
     Step (which should probably really be a conventional unit test instead) to run the app
     without any parameter.
     """
-    app = context.app = App()
+    app = context.app
     app.go()
 
 @when("I run the app passing in the name (?P<testbed>[^ ]*)")
@@ -121,34 +117,22 @@ def step_impl(context, output_file, testbed):
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
-        assert_all_items_in(
-            [   '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image'.format(testbed),
-                '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
-                '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
-                '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
-            ], img_srcs)
-        assert 'Image named {}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed) in img_alts
+        assert_all_items_in([ x.format(testbed) for x in TESTCASES_SRC1], img_srcs)
+        assert_all_items_in([ "Image named {}".format(x.format(testbed)) for x in TESTCASES_SRC1], img_alts)
 
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
     """
     :type context: behave.runner.Context
     """
-    #TODO possibly REFACTOR
-    assert os.path.isfile(output_file)
-    assert os.path.isdir(testbed)
+    assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
+    assert os.path.isdir(testbed), "Dir {} does not exist".format(testbed)
     with open(output_file, 'r') as f:
         img_dicts = all_imgs_in(f)
         img_srcs = [i['src'] for i in img_dicts]
         img_alts = [i['alt'] for i in img_dicts]
-        assert_all_items_in(
-            [   '{}/2018-03/03-16-to-31/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image'.format(testbed),
-                '{}/2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed),
-                '{}/2018-03/special/1522427391.42871/8c4c2db15c4d3ca851b2a58c971b2fce.image'.format(testbed),
-            ], img_srcs)
-        assert_all_items_in(
-            ['Image named {}/2018-03/03-16-to-31/1521323051.57557/8c80fe611653c24656cbfa8a00b16ad4.image'.format(testbed)],
-            img_alts)
+        assert_all_items_in([ x.format(testbed) for x in TESTCASES_SRC1], img_srcs)
+        assert_all_items_in([ "Image named {}".format(x.format(testbed)) for x in TESTCASES_SRC1], img_alts)
 
 
 
@@ -162,3 +146,11 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     pass
+
+
+@when("I run the app with output file (?P<output_file>.*)")
+def step_impl(context, output_file):
+    """
+    :type context: behave.runner.Context
+    """
+    context.app.go(output_file=output_file)

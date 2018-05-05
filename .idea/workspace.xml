@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/features/environment.py" afterPath="$PROJECT_DIR$/features/environment.py" />
       <change beforePath="$PROJECT_DIR$/tuneinrecordingsapp.py" afterPath="$PROJECT_DIR$/tuneinrecordingsapp.py" />
     </list>
     <ignored path="tests/testbed/recordings/" />
@@ -21,19 +20,18 @@
     <SUITE FILE_PATH="coverage/tuneinrecordings$philip.coverage" NAME="philip Coverage Results" MODIFIED="1525157292041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525496721694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525498593332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tuneinrecordingsapp.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tuneinrecordingsapp.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+            <state relative-caret-position="319">
+              <caret line="51" column="93" lean-forward="false" selection-start-line="51" selection-start-column="93" selection-end-line="51" selection-end-column="93" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#314#562#0" expanded="false" />
-                <element signature="e#1903#2077#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -49,14 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="environment.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="environment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/environment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="24">
+              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,8 +171,8 @@
         <option value="$PROJECT_DIR$/philip.py" />
         <option value="$PROJECT_DIR$/features/thumbnails.feature" />
         <option value="$PROJECT_DIR$/features/steps/thumbnails.py" />
-        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
         <option value="$PROJECT_DIR$/features/environment.py" />
+        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
       </list>
     </option>
   </component>
@@ -502,19 +498,17 @@
       <option name="project" value="LOCAL" />
       <updated>1525495193858</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="PASS! Arbitrary location for output. (But do img tags in the file work?)">
+      <created>1525497593331</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1525497593331</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="thumbnails_feature - 2018.05.04 at 21h 38m 34s.xml">
-      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
-    </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.04 at 21h 39m 06s.xml">
-      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
-    </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.04 at 21h 39m 14s.xml">
-      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
-    </history-entry>
     <history-entry file="thumbnails_feature - 2018.05.04 at 21h 50m 22s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
@@ -534,6 +528,15 @@
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
     <history-entry file="thumbnails_feature - 2018.05.04 at 22h 05m 23s.xml">
+      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    </history-entry>
+    <history-entry file="thumbnails_feature - 2018.05.04 at 22h 22m 58s.xml">
+      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    </history-entry>
+    <history-entry file="thumbnails_feature - 2018.05.04 at 22h 36m 17s.xml">
+      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    </history-entry>
+    <history-entry file="thumbnails_feature - 2018.05.04 at 22h 36m 36s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
   </component>
@@ -602,7 +605,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now it seems to be accessing the TuneIn site. The test is pretty bogus, because I won't be returning the entire tree, but it's nice to see something pass." />
     <MESSAGE value="It's getting a list but one with lots of None's. I don't get this because my watch on [node.text for node in tree.xpath('//div[@id=&quot;container-1&quot;]//div[text()]')] doesn't have all the None members." />
     <MESSAGE value="I had put my hard-coded &quot;fake it til you make it&quot; in the wrong step!" />
     <MESSAGE value="Failing on the fake it til you make it, as it should be." />
@@ -627,7 +629,8 @@
     <MESSAGE value="FAIL but the recursion test case more or less works." />
     <MESSAGE value="REFACTOR: Same test fails but now the App handles variable filenames." />
     <MESSAGE value="REFACTOR. Start extracting image file names; using fixture.app tag." />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR. Start extracting image file names; using fixture.app tag." />
+    <MESSAGE value="PASS! Arbitrary location for output. (But do img tags in the file work?)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PASS! Arbitrary location for output. (But do img tags in the file work?)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,7 +741,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#314#562#0" expanded="false" />
-            <element signature="e#1903#2077#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -884,14 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="2" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -929,24 +923,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
+    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#314#562#0" expanded="false" />
-            <element signature="e#1903#2077#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="30" column="2" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/environment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="24">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="51" column="93" lean-forward="false" selection-start-line="51" selection-start-column="93" selection-end-line="51" selection-end-column="93" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
           </folding>
         </state>
       </provider>

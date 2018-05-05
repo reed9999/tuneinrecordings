@@ -9,7 +9,6 @@ def app(context):
     context.app = App()
     yield context.app
     # -- CLEANUP-FIXTURE PART: --- can I modify this comment at will?
-    print("No shutdown needed")
 
 
 def before_all(context):

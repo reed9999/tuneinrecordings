@@ -39,6 +39,7 @@ class TuneInRecordingsApp():
         output_file = (output_file or self._output_file)
         image_files = self.__class__.pathed_image_filenames_in(directory)
 
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
         with open(output_file, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)
 

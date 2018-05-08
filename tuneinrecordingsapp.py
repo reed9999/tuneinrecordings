@@ -17,7 +17,15 @@ IMAGE_FILE_AS_IMG_HTML = """
 DEFAULT_BASE_DIR = 'tests/testbed/recordings'
 DEFAULT_OUTPUT_FILE = './thumbnails.html'
 class TuneInRecordingsApp():
+    """
+    Application to help manage numerous TuneIn recordings subdirectories.
 
+    At present the command line interface isn't yet implemented.
+    >>> from tuneinrecordingsapp import TuneInRecordingsApp as App
+    >>> App().go()
+
+
+    """
     def __init__(self, base_dir=None, output_file=None):
         self._base_dir = (base_dir or DEFAULT_BASE_DIR)
         self._output_file = (output_file or DEFAULT_OUTPUT_FILE)

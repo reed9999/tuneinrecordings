@@ -20,7 +20,7 @@
     <SUITE FILE_PATH="coverage/tuneinrecordings$philip.coverage" NAME="philip Coverage Results" MODIFIED="1525157292041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp.coverage" NAME="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp Coverage Results" MODIFIED="1525827589269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp.coverage" NAME="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp Coverage Results" MODIFIED="1525897112896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1525502453290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
@@ -41,8 +41,8 @@
       <file leaf-file-name="test_tuneInRecordingsApp.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="43" column="118" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="118" />
+            <state relative-caret-position="202">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -83,11 +83,10 @@
       <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="201">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="23" selection-end-column="12" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#591#829#0" expanded="false" />
                 <element signature="e#639#684#0" expanded="false" />
                 <element signature="e#779#829#0" expanded="false" />
                 <element signature="e#934#1425#0" expanded="false" />
@@ -134,8 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>join</find>
-      <find>testbed</find>
       <find>with relative paths</find>
       <find>isfile</find>
       <find>go(</find>
@@ -161,9 +158,11 @@
       <find>philip</find>
       <find>self._app =</find>
       <find>T\('(.*)'\)</find>
-      <find>OUTPUT_FILENAME</find>
       <find>d93</find>
       <find>testbed/recordings/1513103473.83708/abb7079cd48a474f19516e41fe5cdddd.image</find>
+      <find>cp</find>
+      <find>OUTPUT_FILENAME</find>
+      <find>from shutil</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -581,38 +580,45 @@
       <option name="project" value="LOCAL" />
       <updated>1525739060623</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="INTERMEDIATE: Bogged down in generating meaningful tests of img paths.">
+      <created>1525827929574</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1525827929574</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 12h 19m 09s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 12h 19m 41s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 14h 28m 39s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 14h 28m 42s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 14h 29m 49s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 14h 31m 08s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 15h 01m 21s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 15h 08m 23s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 15h 10m 18s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 04m 47s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 21m 03s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 26m 17s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 28m 07s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 29m 19s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 34m 34s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 35m 23s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.08 at 18h 35m 34s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.09 at 13h 18m 36s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
   </component>
@@ -632,7 +638,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -641,7 +647,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -681,7 +687,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Passes for two-country case. The Fake It is the logic for only Peru or Myanmar. &#10;&#10;Also cruft where I explore Python's lazy Boolean evaluation (short circuiting) and find I don't really understand it yet." />
     <MESSAGE value="First meaningful failing test. No file yet created." />
     <MESSAGE value="And now I faked it enough to pass again." />
     <MESSAGE value="Failing test again: Now it wants an img tag in the file." />
@@ -706,7 +711,8 @@
     <MESSAGE value="TESTS FAIL but the functionality now works. Tests need attention.&#10;&#10;This suggests that my tests are too coupled to specific strings, not &#10;verifying real functionality (since recordings/output/thumbnails.html&#10;now has real functionality and the default thumbnails.html retained it,&#10;but that made the tests fail)." />
     <MESSAGE value="PASS! Relative paths now work." />
     <MESSAGE value="INTERMEDIATE: Laying out framework for unit tests. Not real tests yet.&#10;&#10;Philosophically I feel I should replace some of my BDD tests with unit &#10;tests. It's not that the BDD tests are bad, exactly, but exercising &#10;parameters (present or absent) feels like it pertains to unit tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="INTERMEDIATE: Laying out framework for unit tests. Not real tests yet.&#10;&#10;Philosophically I feel I should replace some of my BDD tests with unit &#10;tests. It's not that the BDD tests are bad, exactly, but exercising &#10;parameters (present or absent) feels like it pertains to unit tests." />
+    <MESSAGE value="INTERMEDIATE: Bogged down in generating meaningful tests of img paths." />
+    <option name="LAST_COMMIT_MESSAGE" value="INTERMEDIATE: Bogged down in generating meaningful tests of img paths." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,7 +749,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py</url>
-          <line>45</line>
+          <line>63</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
@@ -982,13 +988,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="227" column="33" lean-forward="false" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="201">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="23" selection-end-column="12" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#591#829#0" expanded="false" />
             <element signature="e#639#684#0" expanded="false" />
             <element signature="e#779#829#0" expanded="false" />
             <element signature="e#934#1425#0" expanded="false" />
@@ -1012,25 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#314#562#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1041,8 +1054,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="43" column="118" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="118" />
+        <state relative-caret-position="202">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

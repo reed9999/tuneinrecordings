@@ -36,8 +36,7 @@ class TuneInRecordingsApp():
             raise RuntimeError("Not yet implemented: Non-recursive handling.")
         image_files = []
         for root, directories, files in os.walk(base_dir):
-        # for directory in glob.glob(os.path.join(base_dir, "*")):
-            for directory in directories:
+            for directory in [''] + directories:
                 for image in glob.glob(os.path.join(root, directory, "*.image")):
                     image_files.append(image)
         return image_files

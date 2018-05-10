@@ -24,7 +24,7 @@ class TestTuneInRecordingsApp(TestCase):
 
     def rm_old_contents(self):
         for i in range(1, 3):
-            path = "testbed/recordings/simple/{}".format(i)
+            path = "testbed/recordings/simple/{0:02d}".format(i)
             if os.path.isdir(path):
                 rmtree(path)
 
@@ -52,10 +52,10 @@ class TestTuneInRecordingsApp(TestCase):
 
     def test_pathed_image_filenames_in(self):
         self.set_up_simple_filenames()
-        bases = ["testbed/recordings/simple{}".format(i) for i in range(1, 3)]
+        bases = ["testbed/recordings/simple/{0:02d}".format(i) for i in range(1, 3)]
         for base in bases:
             actual = App.pathed_image_filenames_in(base_dir=base, recursive=True)
-            assert len(actual) > 0, "No image files in {}".base
+            assert len(actual) > 0, "No image files in {0}".format(base)
             #Somehow I completely lost sight of what I'm trying to do here.
             #Iterate through the bases. For each base, there will be a different set of paths to
             # look for.

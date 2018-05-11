@@ -122,7 +122,7 @@ def all_img_attributes_in(f):
     img_dicts = all_imgs_in(f)
     img_srcs = [i['src'] for i in img_dicts]
     img_alts = [i['alt'] for i in img_dicts]
-    return img_srcs, img_srcs
+    return img_srcs, img_alts
 
 
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
@@ -133,7 +133,6 @@ def step_impl(context, output_file, testbed):
     assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
     assert os.path.isdir(testbed), "Dir {} does not exist".format(testbed)
     with open(output_file, 'r') as f:
-#TODO! REFACTOR! Because I needed to make identical changes to use TEST_RESULTS here.
         img_srcs, img_alts = all_img_attributes_in(f)
         expected = TEST_RESULTS['all_imgs']
         base = "/home/philip/code/tuneinrecordings"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="REFACTOR. Externalize expected values to results.py as does Django.">
+    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/features/steps/thumbnails.py" afterPath="$PROJECT_DIR$/features/steps/thumbnails.py" />
     </list>
@@ -21,7 +21,7 @@
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/tuneinrecordings$py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp.coverage" NAME="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp Coverage Results" MODIFIED="1525938125640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1526021886100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1526022536002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -29,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
-              <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#314#562#0" expanded="false" />
@@ -83,8 +83,8 @@
       <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+            <state relative-caret-position="158">
+              <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#327#372#0" expanded="false" />
@@ -104,19 +104,9 @@
                 <element signature="e#2739#2988#0" expanded="false" />
                 <element signature="e#3337#3389#1" expanded="false" />
                 <element signature="e#4300#4352#1" expanded="false" />
-                <element signature="e#5285#5346#0" expanded="false" />
-                <element signature="e#5285#5337#1" expanded="false" />
+                <element signature="e#5199#5260#0" expanded="false" />
+                <element signature="e#5199#5251#1" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matchers.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,8 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>make_testbed_writeable()</find>
-      <find>skip</find>
       <find>#De</find>
       <find>I get an</find>
       <find>not set</find>
@@ -156,13 +144,15 @@
       <find>{}&quot;.b</find>
       <find>{}</find>
       <find>copytr</find>
-      <find>OUTPUT_FILENAME</find>
       <find>pathed_im</find>
       <find>TESTCASES_SRC1</find>
       <find>SRC1</find>
       <find>TEST_RESULTS</find>
       <find>img_srcs = [i['src'] for i in img_dicts]</find>
       <find>all_imgs_in</find>
+      <find>all_img_attributes_in</find>
+      <find>all_</find>
+      <find>OUTPUT_FILENAME</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -178,8 +168,8 @@
       <replace>return</replace>
       <replace>T['\1']</replace>
       <replace>T['\\1']</replace>
-      <replace>/2018</replace>
       <replace>T['$1']</replace>
+      <replace>/2018</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -602,16 +592,17 @@
       <option name="project" value="LOCAL" />
       <updated>1525914197544</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="FAIL feature. I thought I just did an easy refactoring; apparently not.">
+      <created>1526021943504</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1526021943504</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.09 at 18h 01m 07s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.09 at 18h 01m 15s.xml">
-      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.10 at 00h 42m 07s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
@@ -636,6 +627,12 @@
     <history-entry file="thumbnails_feature - 2018.05.10 at 23h 58m 19s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
     </history-entry>
+    <history-entry file="thumbnails_feature - 2018.05.11 at 00h 08m 55s.xml">
+      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    </history-entry>
+    <history-entry file="thumbnails_feature - 2018.05.11 at 00h 31m 20s.xml">
+      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="5">
     <todo-panel id="selected-file">
@@ -654,7 +651,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5313131" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -663,7 +660,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -703,7 +700,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Passing (FITYMI): Hardcoded file with garbage img tag passes." />
     <MESSAGE value="Passing for a slightly useful albeit very hardcoded HTML file." />
     <MESSAGE value="Fail: Testing for images not in the hard-coding. (+refactored)&#10;&#10;Again, the idea here is to test for a bit more functionality, to break the &quot;fake it til you make it&quot; (FITYMI) and force myself to" />
     <MESSAGE value="Pass: Basic functionality is there, though clearly in a messy HTML file.&#10;&#10;Next: Refactor, maybe." />
@@ -728,7 +724,8 @@
     <MESSAGE value="INTERMEDIATE: Somewhat less broken, I think." />
     <MESSAGE value="PASS: Bug. Didn't include root along w/ list of directories from os.walk&#10;&#10;Took me a while--Key was that if I go back one directory from the one &#10;with the .image file then it passed the (still pretty flimsy) test.&#10;&#10;Two tests are still skipped. Now might be a good time to start &#10;externalizing test data à la Django tests, no?" />
     <MESSAGE value="REFACTOR. Externalize expected values to results.py as does Django." />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTOR. Externalize expected values to results.py as does Django." />
+    <MESSAGE value="FAIL feature. I thought I just did an easy refactoring; apparently not." />
+    <option name="LAST_COMMIT_MESSAGE" value="FAIL feature. I thought I just did an easy refactoring; apparently not." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -752,11 +749,6 @@
           <url>file://$PROJECT_DIR$/tuneinutilapp.py</url>
           <line>19</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tuneinrecordingsapp.py</url>
@@ -784,20 +776,25 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tuneinrecordingsapp.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="53" />
+          <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tuneinrecordingsapp.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
+          <line>124</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/features/steps/thumbnails.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="55" />
+      <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="tests">
@@ -1010,14 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features/environment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1050,17 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#314#562#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -1087,10 +1065,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/behave/matchers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+        <state relative-caret-position="158">
+          <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#327#372#0" expanded="false" />
@@ -1110,8 +1107,8 @@
             <element signature="e#2739#2988#0" expanded="false" />
             <element signature="e#3337#3389#1" expanded="false" />
             <element signature="e#4300#4352#1" expanded="false" />
-            <element signature="e#5285#5346#0" expanded="false" />
-            <element signature="e#5285#5337#1" expanded="false" />
+            <element signature="e#5199#5260#0" expanded="false" />
+            <element signature="e#5199#5251#1" expanded="false" />
           </folding>
         </state>
       </provider>

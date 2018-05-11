@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/features/steps/thumbnails.py" afterPath="$PROJECT_DIR$/features/steps/thumbnails.py" />
-    </list>
+    <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="" />
     <ignored path="tests/testbed/recordings/" />
     <ignored path="thumbnails.html" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -599,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526021943504</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="INTERMEDIATE. Fixed most failures; one still fails.&#10;&#10;Problem was that the return value tuple was backwards.">
+      <created>1526060589807</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1526060589807</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -660,7 +664,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.053125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5464646" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -700,7 +704,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Passing for a slightly useful albeit very hardcoded HTML file." />
     <MESSAGE value="Fail: Testing for images not in the hard-coding. (+refactored)&#10;&#10;Again, the idea here is to test for a bit more functionality, to break the &quot;fake it til you make it&quot; (FITYMI) and force myself to" />
     <MESSAGE value="Pass: Basic functionality is there, though clearly in a messy HTML file.&#10;&#10;Next: Refactor, maybe." />
     <MESSAGE value="REFACTORED: Test steps; I should be requiring that relative paths work." />
@@ -725,7 +728,8 @@
     <MESSAGE value="PASS: Bug. Didn't include root along w/ list of directories from os.walk&#10;&#10;Took me a while--Key was that if I go back one directory from the one &#10;with the .image file then it passed the (still pretty flimsy) test.&#10;&#10;Two tests are still skipped. Now might be a good time to start &#10;externalizing test data à la Django tests, no?" />
     <MESSAGE value="REFACTOR. Externalize expected values to results.py as does Django." />
     <MESSAGE value="FAIL feature. I thought I just did an easy refactoring; apparently not." />
-    <option name="LAST_COMMIT_MESSAGE" value="FAIL feature. I thought I just did an easy refactoring; apparently not." />
+    <MESSAGE value="INTERMEDIATE. Fixed most failures; one still fails.&#10;&#10;Problem was that the return value tuple was backwards." />
+    <option name="LAST_COMMIT_MESSAGE" value="INTERMEDIATE. Fixed most failures; one still fails.&#10;&#10;Problem was that the return value tuple was backwards." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

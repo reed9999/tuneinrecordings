@@ -1,17 +1,12 @@
 import os
 import glob
+from tests.results import TEST_RESULTS
 from hamcrest import assert_that, equal_to
 from lxml import html
 from shutil import copyfile, copy2, copytree, rmtree
 
 use_step_matcher("re")
 
-TESTCASES_SRC1 = [   #Start externalizing the lazy way, but eventually the DRY way...
-    '{}/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image',
-    '{}/1521320898.1627/60a58df0b9d06ce905b72c371a665d93.image',
-    '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
-    '{}/1521323051.57557/60a58df0b9d06ce905b72c371a665d93.image',
-]
 
 @given("There are no lingering output files")
 def step_impl(context):
@@ -114,12 +109,21 @@ def step_impl(context, output_file, testbed):
     assert os.path.isfile(output_file)
     assert os.path.isdir(testbed)
     with open(output_file, 'r') as f:
-        img_dicts = all_imgs_in(f)
-        img_srcs = [i['src'] for i in img_dicts]
-        img_alts = [i['alt'] for i in img_dicts]
-        full_list_of_absolute_src_paths = [ os.path.join("/home/philip/code/tuneinrecordings", x.format(testbed)) for x in TESTCASES_SRC1]
+        img_alts, img_srcs = all_img_attributes_in(f)
+        expected = TEST_RESULTS['all_imgs']
+        base = "/home/philip/code/tuneinrecordings"
+        full_list_of_absolute_src_paths = \
+            [os.path.join(base, x.format(testbed)) for x in expected]
         assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
         assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
+
+
+def all_img_attributes_in(f):
+    img_dicts = all_imgs_in(f)
+    img_srcs = [i['src'] for i in img_dicts]
+    img_alts = [i['alt'] for i in img_dicts]
+    return img_srcs, img_srcs
+
 
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
 def step_impl(context, output_file, testbed):
@@ -129,10 +133,12 @@ def step_impl(context, output_file, testbed):
     assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
     assert os.path.isdir(testbed), "Dir {} does not exist".format(testbed)
     with open(output_file, 'r') as f:
-        img_dicts = all_imgs_in(f)
-        img_srcs = [i['src'] for i in img_dicts]
-        img_alts = [i['alt'] for i in img_dicts]
-        full_list_of_absolute_src_paths = [ os.path.join("/home/philip/code/tuneinrecordings", x.format(testbed)) for x in TESTCASES_SRC1]
+#TODO! REFACTOR! Because I needed to make identical changes to use TEST_RESULTS here.
+        img_srcs, img_alts = all_img_attributes_in(f)
+        expected = TEST_RESULTS['all_imgs']
+        base = "/home/philip/code/tuneinrecordings"
+        full_list_of_absolute_src_paths = \
+            [os.path.join(base, x.format(testbed)) for x in expected]
         assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
         assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
 

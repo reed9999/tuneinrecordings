@@ -108,8 +108,9 @@ def step_impl(context, output_file, testbed):
 
     assert os.path.isfile(output_file)
     assert os.path.isdir(testbed)
+    #TODO REFACTOR
     with open(output_file, 'r') as f:
-        img_alts, img_srcs = all_img_attributes_in(f)
+        img_srcs, img_alts = all_img_attributes_in(f)
         expected = TEST_RESULTS['all_imgs']
         base = "/home/philip/code/tuneinrecordings"
         full_list_of_absolute_src_paths = \

@@ -100,6 +100,19 @@ def assert_all_items_in(list_of_expected, actual_list):
     for item in list_of_expected:
         assert item in actual_list, "Not in the list of actuals: {}".format(item)
 
+def assert_output_contains_all_img_and_alt(output_file, testbed, recursive=True):
+    with open(output_file, 'r') as f:
+        img_srcs, img_alts = all_img_attributes_in(f)
+        expected = TEST_RESULTS['all_imgs']
+        base = "/home/philip/code/tuneinrecordings"
+        full_list_of_absolute_src_paths = \
+            [os.path.join(base, x.format(testbed)) for x in expected]
+        assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
+        assert_all_items_in(["Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
+    if not recursive:
+        raise NotImplementedError
+
+
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>[^ .]*)\.?")
 def step_impl(context, output_file, testbed):
     """
@@ -108,16 +121,13 @@ def step_impl(context, output_file, testbed):
 
     assert os.path.isfile(output_file)
     assert os.path.isdir(testbed)
-    #TODO REFACTOR
-    with open(output_file, 'r') as f:
-        img_srcs, img_alts = all_img_attributes_in(f)
-        expected = TEST_RESULTS['all_imgs']
-        base = "/home/philip/code/tuneinrecordings"
-        full_list_of_absolute_src_paths = \
-            [os.path.join(base, x.format(testbed)) for x in expected]
-        assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
-        assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
-
+    #recursive=False doesn't do anything yet
+    try:
+        assert_output_contains_all_img_and_alt(output_file=output_file,
+                                           testbed=testbed, recursive=False)
+    except NotImplementedError:
+        msg = "Non-recursive behavior is not yet/might never be implemented."
+        print("WARNING: " + msg)
 
 def all_img_attributes_in(f):
     img_dicts = all_imgs_in(f)
@@ -133,18 +143,8 @@ def step_impl(context, output_file, testbed):
     """
     assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
     assert os.path.isdir(testbed), "Dir {} does not exist".format(testbed)
-    with open(output_file, 'r') as f:
-        img_srcs, img_alts = all_img_attributes_in(f)
-        expected = TEST_RESULTS['all_imgs']
-        base = "/home/philip/code/tuneinrecordings"
-        full_list_of_absolute_src_paths = \
-            [os.path.join(base, x.format(testbed)) for x in expected]
-        assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
-        assert_all_items_in([ "Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
-
-
-
-
+    assert_output_contains_all_img_and_alt(output_file=output_file,
+                                           testbed=testbed, recursive=True)
 
 
 ### TODO: This is for troubleshooting because it doesn't seem to recognize the parametrized one.

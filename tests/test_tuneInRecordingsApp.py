@@ -13,6 +13,8 @@ TEST_PATHS = {
 class TestTuneInRecordingsApp(TestCase):
     def setUp(self):
         T = TEST_PATHS
+        #Perhaps this should be one-time or lazy setup; as is, it's
+        # inefficient to keep creating apps we don't use.
         self._apps = {
             'no params': self.construct_no_params(),
             'base only': self.construct_base_dir_only(T['base1']),
@@ -63,10 +65,21 @@ class TestTuneInRecordingsApp(TestCase):
                 if base == "testbed/recordings/2018-03":
                     assert i in actual, "Could not find {}".format(i)
 
+    def generic_test_go(self, app):
+        app.go()
+        verify_all_expected_contents(app)
+
     def test_go_no_params(self):
-        for (k, app) in self._apps.items():
-            app.go()
-        self.skipTest("NYI")
+        self.generic_test_go(self._apps['no params'])
+
+    def test_go_base_only(self):
+        self.generic_test_go(self._apps['base_only'])
+
+    def test_go_output_only(self):
+        self.generic_test_go(self._apps['output only'])
+
+    def test_go_both(self):
+        self.generic_test_go(self._apps['both'])
 
     def test_go_does_not_raise_an_exception(self):
         for (k, app) in self._apps.items():

@@ -67,13 +67,15 @@ class TestTuneInRecordingsApp(TestCase):
 
     def generic_test_go(self, app):
         app.go()
-        verify_all_expected_contents(app)
+        self.verify_all_expected_contents(app)
 
+    #I can't decide if it's better to iterate through the four in one test
+    #method or isolate each one like this.
     def test_go_no_params(self):
         self.generic_test_go(self._apps['no params'])
 
     def test_go_base_only(self):
-        self.generic_test_go(self._apps['base_only'])
+        self.generic_test_go(self._apps['base only'])
 
     def test_go_output_only(self):
         self.generic_test_go(self._apps['output only'])
@@ -85,10 +87,15 @@ class TestTuneInRecordingsApp(TestCase):
         for (k, app) in self._apps.items():
             try:
                 app.go()
-            except exception as e:
-                self.fail("method go() of App constructed with {} raised {}!".format(k, e))
+            except Exception as e:
+                msg = "method go() of App constructed with {} raised {}!"
+                msg = msg.format(k, e)
+                self.fail(msg)
 
     def test_write_image_filenames_to(self):
         for (k, app) in self._apps.items():
             assert True, "failure in {}".format(k)
         self.skipTest("NYI")
+
+    def verify_all_expected_contents(self, app):
+        self.skipTest("verify_all_expected_contents() method NYI, but implementing now...")

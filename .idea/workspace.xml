@@ -20,7 +20,7 @@
     <SUITE FILE_PATH="coverage/tuneinrecordings$philip.coverage" NAME="philip Coverage Results" MODIFIED="1525157292041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_language_genre_pair__music_.coverage" NAME="basic.feature:Retrieve simple language/genre pair (music) Coverage Results" MODIFIED="1524859316825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/webutil_py$basic_feature_Retrieve_simple_country_list.coverage" NAME="basic.feature:Retrieve simple country list Coverage Results" MODIFIED="1524870910186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/tuneinrecordings$py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp.coverage" NAME="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp Coverage Results" MODIFIED="1526331221993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/tuneinrecordings$py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp.coverage" NAME="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp Coverage Results" MODIFIED="1526361929510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/tuneinrecordings$thumbnails_feature.coverage" NAME="thumbnails.feature Coverage Results" MODIFIED="1526106156762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
@@ -28,7 +28,7 @@
       <file leaf-file-name="tuneinrecordingsapp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
+            <state relative-caret-position="768">
               <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
@@ -42,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/tests/results.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,8 +51,8 @@
       <file leaf-file-name="test_tuneInRecordingsApp.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            <state relative-caret-position="322">
+              <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -112,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>walk</find>
       <find>os.walk</find>
       <find>.format(testbed)</find>
       <find>BASE_DIR</find>
@@ -142,6 +141,7 @@
       <find>with ope</find>
       <find>assert_output_contains_all_img_and_alt</find>
       <find>base</find>
+      <find>verify_all_expected_contents</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -223,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,6 +251,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -610,24 +610,31 @@
       <option name="project" value="LOCAL" />
       <updated>1526106124229</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="FAIL (intentional): NYI verification for our App.go() results.">
+      <created>1526331254658</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1526331254658</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 13h 47m 17s.xml">
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 22h 20m 20s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 13h 51m 11s.xml">
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 22h 20m 38s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 13h 53m 43s.xml">
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 22h 22m 34s.xml">
       <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.11 at 23h 08m 23s.xml">
-      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 22h 23m 51s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
-    <history-entry file="thumbnails_feature - 2018.05.11 at 23h 13m 00s.xml">
-      <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
+    <history-entry file="py_test_for_test_tuneInRecordingsApp_TestTuneInRecordingsApp - 2018.05.14 at 22h 25m 30s.xml">
+      <configuration name="py.test for test_tuneInRecordingsApp.TestTuneInRecordingsApp" configurationId="tests" />
     </history-entry>
     <history-entry file="thumbnails_feature - 2018.05.11 at 23h 13m 18s.xml">
       <configuration name="thumbnails.feature" configurationId="PyBehaveRunConfigurationType" />
@@ -711,7 +718,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="REFACTORED: Test steps; I should be requiring that relative paths work." />
     <MESSAGE value="REFACTORED: One of my @when should have been @given.&#10;&#10;Also the relative paths is an implementation feature. It should &quot;just work&quot; and I should test it from various places (although this is more a unit test than a behavior)." />
     <MESSAGE value="Messy test changes but copy testbed sorta works.&#10;&#10;Trying to learn to use fixtures in behave, but sorta left that part unfinished and messy. Ignore the Firefox names; nothing to do with Firefox!" />
     <MESSAGE value="PASS, sorta, but there are some organizational issues with my tests.&#10;&#10;The recursive tests should use the recursive setup but somehow I didn't set them up that way.&#10;That's completely leaving out the issue of what should be in fixtures, before_all, etc. instead of in steps." />
@@ -736,7 +742,8 @@
     <MESSAGE value="INTERMEDIATE. Fixed most failures; one still fails.&#10;&#10;Problem was that the return value tuple was backwards." />
     <MESSAGE value="PASS. Fixed refactor problem--2nd instance of reversing returned tuple." />
     <MESSAGE value="REFACTORED. Addressing DRY violation that caused bug on last refactor.&#10;&#10;I forgot to flip the expected return tuple in the 2nd instance, which &#10;is a classic example of why I should have refactored better in the first place!" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTORED. Addressing DRY violation that caused bug on last refactor.&#10;&#10;I forgot to flip the expected return tuple in the 2nd instance, which &#10;is a classic example of why I should have refactored better in the first place!" />
+    <MESSAGE value="FAIL (intentional): NYI verification for our App.go() results." />
+    <option name="LAST_COMMIT_MESSAGE" value="FAIL (intentional): NYI verification for our App.go() results." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -865,6 +872,71 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#314#562#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1488">
+          <caret line="128" column="63" lean-forward="false" selection-start-line="128" selection-start-column="63" selection-end-line="128" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#327#372#0" expanded="false" />
+            <element signature="e#467#517#0" expanded="false" />
+            <element signature="e#622#1113#0" expanded="false" />
+            <element signature="e#622#674#1" expanded="false" />
+            <element signature="e#877#1113#0" expanded="false" />
+            <element signature="e#1221#1568#0" expanded="false" />
+            <element signature="e#1221#1273#1" expanded="false" />
+            <element signature="e#1622#1828#0" expanded="false" />
+            <element signature="e#1622#1793#1" expanded="false" />
+            <element signature="e#1929#2161#0" expanded="false" />
+            <element signature="e#1929#2102#1" expanded="false" />
+            <element signature="e#2194#3002#0" expanded="false" />
+            <element signature="e#2194#2369#1" expanded="false" />
+            <element signature="e#2510#2578#0" expanded="false" />
+            <element signature="e#2739#2988#0" expanded="false" />
+            <element signature="e#4784#4836#1" expanded="false" />
+            <element signature="e#5340#5401#0" expanded="false" />
+            <element signature="e#5340#5392#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -1216,14 +1288,14 @@
     <entry file="file://$PROJECT_DIR$/tests/results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
+        <state relative-caret-position="768">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
@@ -1234,8 +1306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+        <state relative-caret-position="322">
+          <caret line="99" column="36" lean-forward="false" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="36" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

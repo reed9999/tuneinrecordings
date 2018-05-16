@@ -2,11 +2,11 @@
 # maybe also #https://www.coursera.org/learn/python-network-data/lecture/bwvyb/12-4-retrieving-web-pages
 
 
-OUTPUT_FILENAME = "thumbnails.html"
 import os
 import glob
 
 
+OUTPUT_FILENAME = "thumbnails.html"
 #If I figure out a templating system, this would belong there.
 IMAGE_FILE_AS_IMG_HTML = """
                 <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>

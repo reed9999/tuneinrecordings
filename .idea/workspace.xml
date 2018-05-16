@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1255065d-839b-4658-acb0-2e1e5402304d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/features/steps/requirements.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/features/steps/thumbnails.py" afterPath="$PROJECT_DIR$/features/steps/thumbnails.py" />
-      <change beforePath="$PROJECT_DIR$/features/thumbnails.feature" afterPath="$PROJECT_DIR$/features/thumbnails.feature" />
-      <change beforePath="$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py" afterPath="$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py" />
+      <change beforePath="$PROJECT_DIR$/tuneinrecordingsapp.py" afterPath="$PROJECT_DIR$/tuneinrecordingsapp.py" />
     </list>
     <ignored path="tests/testbed/recordings/" />
     <ignored path="thumbnails.html" />
@@ -30,10 +29,10 @@
       <file leaf-file-name="tuneinrecordingsapp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding>
-                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#166#175#0" expanded="true" />
                 <element signature="e#314#562#0" expanded="false" />
               </folding>
             </state>
@@ -53,8 +52,8 @@
       <file leaf-file-name="test_tuneInRecordingsApp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="108" column="26" lean-forward="false" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -72,13 +71,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="thumbnails.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="96">
+              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="10" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#328#373#0" expanded="false" />
                 <element signature="e#468#518#0" expanded="false" />
                 <element signature="e#623#1114#0" expanded="false" />
@@ -102,6 +100,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/steps/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -114,7 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>BASE_DIR</find>
       <find>thumbna</find>
       <find>2018</find>
       <find>App()</find>
@@ -144,6 +151,7 @@
       <find>verify_all_expected_contents</find>
       <find>verif</find>
       <find>TEST_</find>
+      <find>assert_out</find>
     </findStrings>
     <replaceStrings>
       <replace>country_name</replace>
@@ -181,11 +189,12 @@
         <option value="$PROJECT_DIR$/philip.py" />
         <option value="$PROJECT_DIR$/features/environment.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
-        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
         <option value="$PROJECT_DIR$/tests/results.py" />
         <option value="$PROJECT_DIR$/features/thumbnails.feature" />
         <option value="$PROJECT_DIR$/features/steps/thumbnails.py" />
         <option value="$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py" />
+        <option value="$PROJECT_DIR$/features/steps/requirements.txt" />
+        <option value="$PROJECT_DIR$/tuneinrecordingsapp.py" />
       </list>
     </option>
   </component>
@@ -881,17 +890,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#314#562#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -913,7 +911,6 @@
         <state relative-caret-position="1488">
           <caret line="128" column="63" lean-forward="false" selection-start-line="128" selection-start-column="63" selection-end-line="128" selection-end-column="63" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#328#373#0" expanded="false" />
             <element signature="e#468#518#0" expanded="false" />
             <element signature="e#623#1114#0" expanded="false" />
@@ -951,7 +948,7 @@
         <state relative-caret-position="768">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#166#175#0" expanded="true" />
             <element signature="e#314#562#0" expanded="false" />
           </folding>
         </state>
@@ -980,7 +977,6 @@
         <state relative-caret-position="1488">
           <caret line="128" column="63" lean-forward="false" selection-start-line="128" selection-start-column="63" selection-end-line="128" selection-end-column="63" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#328#373#0" expanded="false" />
             <element signature="e#468#518#0" expanded="false" />
             <element signature="e#623#1114#0" expanded="false" />
@@ -1016,7 +1012,7 @@
         <state relative-caret-position="768">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#166#175#0" expanded="true" />
             <element signature="e#314#562#0" expanded="false" />
           </folding>
         </state>
@@ -1060,7 +1056,6 @@
         <state relative-caret-position="1368">
           <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#328#373#0" expanded="false" />
             <element signature="e#468#518#0" expanded="false" />
             <element signature="e#623#1114#0" expanded="false" />
@@ -1088,7 +1083,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#166#175#0" expanded="true" />
             <element signature="e#314#562#0" expanded="false" />
           </folding>
         </state>
@@ -1258,25 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#314#562#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1285,22 +1261,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
+    <entry file="file://$PROJECT_DIR$/tuneinrecordingsapp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="108" column="26" lean-forward="false" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        <state relative-caret-position="192">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#166#175#0" expanded="true" />
+            <element signature="e#314#562#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/thumbnails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="96">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="10" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#328#373#0" expanded="false" />
             <element signature="e#468#518#0" expanded="false" />
             <element signature="e#623#1114#0" expanded="false" />
@@ -1320,6 +1296,32 @@
             <element signature="e#5341#5402#0" expanded="false" />
             <element signature="e#5341#5393#1" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/thumbnails.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_tuneInRecordingsApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

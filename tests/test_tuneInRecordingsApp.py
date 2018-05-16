@@ -45,7 +45,9 @@ class TestTuneInRecordingsApp(TestCase):
         return App(base_dir=base_dir, output_file=output_file)
 
     def set_up_simple_filenames(self):
-        testbed = "testbed/recordings"
+        this_file_dir = os.path.dirname(__file__)
+        testbed = os.path.join(this_file_dir,"testbed", "recordings")
+        assert os.path.isdir(testbed)
         src = os.path.join(testbed, "2018-03/03-16-to-31/1521620928.1166")
         dst = os.path.join(testbed, "simple/01")
         copytree(src=src, dst=dst)

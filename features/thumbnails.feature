@@ -42,3 +42,9 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
     When I run the app passing in the name tests/testbed/another-path
     Then I get an HTML file ./thumbnails.html allowing me to view all thumbnails in tests/testbed/another-path and subdirs
 #    Then I get an HTML file tests/output/thumbnails.html with relative paths allowing me to view all thumbnails including subdirs.
+
+  Scenario: Use the GUI to assign names to images
+    Given the GUI is running
+    When I invoke the image naming dialogue
+    And I use the GUI to assign names to images
+    Then the names I assigned are retained.

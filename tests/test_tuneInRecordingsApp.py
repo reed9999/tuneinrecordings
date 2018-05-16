@@ -2,6 +2,8 @@ import os
 from unittest import TestCase
 from shutil import copytree, rmtree
 from tuneinrecordingsapp import TuneInRecordingsApp as App
+from .results import TEST_RESULTS
+
 
 TESTBED_PATH = 'tests/testbed'
 TEST_PATHS = {
@@ -98,4 +100,10 @@ class TestTuneInRecordingsApp(TestCase):
         self.skipTest("NYI")
 
     def verify_all_expected_contents(self, app):
-        self.skipTest("verify_all_expected_contents() method NYI, but implementing now...")
+        self.assert_output_contains_all_img_and_alt('./thumbnails.html', 'testbed')
+
+    # See thumbnails.feature
+    # Part of my dithering between what's a feature test and what's a unit test.
+    # If I really do want to keep this both places, REFACTOR to make it a helper.
+    def assert_output_contains_all_img_and_alt(self, output_file, testbed):
+        self.skipTest("NYI")

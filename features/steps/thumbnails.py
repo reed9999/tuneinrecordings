@@ -1,7 +1,7 @@
 import os
 import glob
 from tests.results import TEST_RESULTS
-from hamcrest import assert_that, equal_to
+#from hamcrest import assert_that, equal_to
 from lxml import html
 from shutil import copyfile, copy2, copytree, rmtree
 

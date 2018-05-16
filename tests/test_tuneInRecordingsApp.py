@@ -58,7 +58,9 @@ class TestTuneInRecordingsApp(TestCase):
 
     def test_pathed_image_filenames_in(self):
         self.set_up_simple_filenames()
-        bases = ["testbed/recordings/simple/{0:02d}".format(i) for i in range(1, 3)]
+        root_dir = os.path.join(os.path.dirname(__file__), "testbed",
+                                "recordings", "simple")
+        bases = [os.path.join(root_dir, "{0:02d}".format(i)) for i in range(1, 3)]
         for base in bases:
             actual = App.pathed_image_filenames_in(base_dir=base, recursive=True)
             assert len(actual) > 0, "No image files in {0}".format(base)

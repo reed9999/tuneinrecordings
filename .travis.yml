@@ -1,9 +1,9 @@
 language: python
 python:
-# For now let's just get 3.6 working.
-# - "2.7"
-# - "3.5"
+ - "2.7"
+ - "3.5"
  - "3.6"
+ - "pypy"
 script:
  - "behave"
  # For now it's looking for testbed files that maybe shouldn't be under git

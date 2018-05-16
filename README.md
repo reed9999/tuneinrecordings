@@ -9,3 +9,6 @@ I'd like to do the following in priority order (at least top level; some lower-p
     - something like en/uk/BBC/Radio-4
 3. Would be nice to embed description in name, but 
 4. My own related sortable database. 
+
+Here's the super-cool Travis build indicator: 
+[![Build Status](https://travis-ci.org/reed9999/tuneinrecordings.svg?branch=master)](https://travis-ci.org/reed9999/tuneinrecordings)

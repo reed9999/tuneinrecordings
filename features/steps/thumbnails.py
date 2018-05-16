@@ -104,7 +104,8 @@ def assert_output_contains_all_img_and_alt(output_file, testbed, recursive=True)
     with open(output_file, 'r') as f:
         img_srcs, img_alts = all_img_attributes_in(f)
         expected = TEST_RESULTS['all_imgs']
-        base = "/home/philip/code/tuneinrecordings"
+
+        base = os.path.abspath(".")
         full_list_of_absolute_src_paths = \
             [os.path.join(base, x.format(testbed)) for x in expected]
         assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)

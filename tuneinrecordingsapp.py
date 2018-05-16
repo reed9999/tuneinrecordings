@@ -55,6 +55,5 @@ class TuneInRecordingsApp():
         output_file.write("<body>")
 
         for i in image_files:
-
             output_file.write(IMAGE_FILE_AS_IMG_HTML.format(image_filename=os.path.abspath(i)))
         output_file.write("</body>")

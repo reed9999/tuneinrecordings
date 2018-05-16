@@ -1,3 +1,10 @@
+#Project specific
+recordings/output
+#We don't really need the recordings themselves at this point.
+*.tir
+*.tim
+*.resume
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

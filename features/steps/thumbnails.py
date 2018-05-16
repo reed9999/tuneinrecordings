@@ -147,13 +147,6 @@ def step_impl(context, output_file, testbed):
                                            testbed=testbed, recursive=True)
 
 
-### TODO: This is for troubleshooting because it doesn't seem to recognize the parametrized one.
-@step("Everything is set up in tests/testbed/another-path and subdirs")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @when("I run the app with output file (?P<output_file>.*)")
@@ -162,3 +155,34 @@ def step_impl(context, output_file):
     :type context: behave.runner.Context
     """
     context.app.go(output_file=output_file)
+
+
+#NOT YET IMPLEMENTED STUFF
+
+@given("the GUI is running")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+@when("I invoke the image naming dialogue")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+@step("I use the GUI to assign names to images")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+@then("the names I assigned are retained\.")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.scenario.skip()

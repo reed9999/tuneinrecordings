@@ -14,7 +14,8 @@ IMAGE_FILE_AS_IMG_HTML = """
                     alt="Image named {image_filename}" style="width: 150px;"/>
                 """
 
-DEFAULT_BASE_DIR = 'tests/testbed/recordings'
+PROJECT_ROOT_DIR = os.path.dirname(__file__)
+DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed', 'recordings')
 DEFAULT_OUTPUT_FILE = './thumbnails.html'
 class TuneInRecordingsApp():
     """

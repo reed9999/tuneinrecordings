@@ -100,7 +100,7 @@ def assert_all_items_in(list_of_expected, actual_list):
     for item in list_of_expected:
         assert item in actual_list, "Not in the list of actuals: {}".format(item)
 
-def assert_output_contains_all_img_and_alt(output_file, testbed, recursive=True):
+def assert_all_img_and_alt_present(output_file, testbed, recursive=True):
     with open(output_file, 'r') as f:
         img_srcs, img_alts = all_img_attributes_in(f)
         expected = TEST_RESULTS['all_imgs']
@@ -124,8 +124,8 @@ def step_impl(context, output_file, testbed):
     assert os.path.isdir(testbed)
     #recursive=False doesn't do anything yet
     try:
-        assert_output_contains_all_img_and_alt(output_file=output_file,
-                                           testbed=testbed, recursive=False)
+        assert_all_img_and_alt_present(output_file=output_file,
+                                       testbed=testbed, recursive=False)
     except NotImplementedError:
         msg = "Non-recursive behavior is not yet/might never be implemented."
         print("WARNING: " + msg)
@@ -144,7 +144,7 @@ def step_impl(context, output_file, testbed):
     """
     assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
     assert os.path.isdir(testbed), "Dir {} does not exist".format(testbed)
-    assert_output_contains_all_img_and_alt(output_file=output_file,
+    assert_all_img_and_alt_present(output_file=output_file,
                                            testbed=testbed, recursive=True)
 
 

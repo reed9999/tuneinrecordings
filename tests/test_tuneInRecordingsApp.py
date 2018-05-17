@@ -59,7 +59,6 @@ class TestTuneInRecordingsApp(TestCase):
         copytree(src=src, dst=dst)
 
     def set_up_general_filenames(self):
-        self.skipTest("I know that set_up_general_filenames isn't implemented properly yet.")
         this_file_dir = os.path.dirname(__file__)
         testbed = os.path.join(this_file_dir,"testbed")
         assert os.path.isdir(testbed)

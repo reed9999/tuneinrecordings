@@ -4,6 +4,24 @@ recordings/output
 *.tir
 *.tim
 *.resume
+#had .idea under git for a while, but too fine grained.
+.idea/
+
+#Review this periodically--not sure all of it needs to go, but....
+#esp not sure if this is useful but I'm reorging anyway.
+#tests/testbed/__store/recordings/special/ 
+
+.pytest_cache/
+all-testbed.txt
+templates/
+tests/.pytest_cache/
+tests/OLDOLDOLDDELETEtests/
+tests/testbed-toplevel.txt
+tests/testbed/output1
+tests/testbed/output2
+README.Deutero.txt
+thumbnails.html
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

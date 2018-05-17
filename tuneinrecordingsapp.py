@@ -5,9 +5,8 @@
 import os
 import glob
 
-
 OUTPUT_FILENAME = "thumbnails.html"
-#If I figure out a templating system, this would belong there.
+# If I figure out a templating system, this would belong there.
 IMAGE_FILE_AS_IMG_HTML = """
                 <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>
                 <img src="{image_filename}" 
@@ -17,6 +16,8 @@ IMAGE_FILE_AS_IMG_HTML = """
 PROJECT_ROOT_DIR = os.path.dirname(__file__)
 DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed', 'recordings')
 DEFAULT_OUTPUT_FILE = './thumbnails.html'
+
+
 class TuneInRecordingsApp():
     """
     Application to help manage numerous TuneIn recordings subdirectories.
@@ -27,6 +28,7 @@ class TuneInRecordingsApp():
 
 
     """
+
     def __init__(self, base_dir=None, output_file=None):
         self._base_dir = (base_dir or DEFAULT_BASE_DIR)
         self._output_file = (output_file or DEFAULT_OUTPUT_FILE)

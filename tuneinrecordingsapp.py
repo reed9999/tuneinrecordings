@@ -15,7 +15,11 @@ IMAGE_FILE_AS_IMG_HTML = """
                 """
 
 PROJECT_ROOT_DIR = os.path.dirname(__file__)
-DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed', 'recordings')
+#TODO!
+# Why on earth is the app defaulting to the testbed anyway???
+# It's nice to make tests pass, but the app shouldn't know about the testbed!
+# Figure out a better way to handle this default.
+DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed-working', 'recordings')
 DEFAULT_OUTPUT_FILE = './thumbnails.html'
 
 

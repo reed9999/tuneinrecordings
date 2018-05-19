@@ -54,15 +54,15 @@ class TuneInRecordingsApp():
         with open(output_file, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)
 
-    @classmethod
-    def new_django_template(cls, image_files, output_file):
-        t = django.template.Template("{{image_files.0}}")
-        c = django.template.Context({'image_files': image_files})
-        t.render(c)
+    # @classmethod
+    # def new_django_template(cls, image_files, output_file):
+    #     t = django.template.Template("{{image_files.0}}")
+    #     c = django.template.Context({'image_files': image_files})
+    #     t.render(c)
 
     @classmethod
     def write_image_filenames_to(cls, image_files, output_file):
-        cls.new_django_template(image_files, output_file)
+        # cls.new_django_template(image_files, output_file)
 
         output_file.write("<body>")
         for i in image_files:

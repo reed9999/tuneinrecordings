@@ -5,6 +5,17 @@
 import os
 import glob
 import django.template
+from django.conf import settings
+settings.configure(TEMPLATES=[
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['.'],
+        'APP_DIRS': False,
+
+    },
+]
+)
+django.setup()
 
 OUTPUT_FILENAME = "thumbnails.html"
 # If I figure out a templating system, this would belong there.
@@ -58,15 +69,16 @@ class TuneInRecordingsApp():
         with open(output_file, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)
 
-    # @classmethod
-    # def new_django_template(cls, image_files, output_file):
-    #     t = django.template.Template("{{image_files.0}}")
-    #     c = django.template.Context({'image_files': image_files})
-    #     t.render(c)
+    @classmethod
+    def new_django_template(cls, image_files, output_file):
+        t = django.template.Template("{{image_files.0}}")
+        c = django.template.Context({'image_files': image_files})
+        print(t.render(c))
+        return (t.render(c))
 
     @classmethod
     def write_image_filenames_to(cls, image_files, output_file):
-        # cls.new_django_template(image_files, output_file)
+        rv = cls.new_django_template(image_files, output_file)
 
         output_file.write("<body>")
         for i in image_files:

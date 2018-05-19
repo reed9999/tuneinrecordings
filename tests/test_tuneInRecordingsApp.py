@@ -8,8 +8,10 @@ from .results import TEST_RESULTS
 THIS_FILE_DIR = os.path.dirname(__file__)
 TESTBED_WORKING = os.path.join(THIS_FILE_DIR, 'testbed-working')
 TEST_PATHS = {
-    'base1': os.path.join(TESTBED_WORKING, 'base1'),
-    'base2': os.path.join(TESTBED_WORKING, 'base2'),
+    'base1': os.path.join(TESTBED_WORKING, 'recordings', 'simple'),
+    # 'base1': os.path.join(TESTBED_WORKING, 'base1'), #good idea NYI
+    'base2': os.path.join(TESTBED_WORKING, 'recordings', '2018-03'),
+    # 'base2': os.path.join(TESTBED_WORKING, 'base2'),  #good idea NYI
     'output1': os.path.join(TESTBED_WORKING, 'output1'),
     'output2': os.path.join(TESTBED_WORKING, 'output2'),
 }
@@ -136,7 +138,8 @@ class TestTuneInRecordingsApp(TestCase):
         self.skipTest("NYI")
 
     def verify_all_expected_contents(self, app):
-        self.assert_all_img_and_alt_present('./thumbnails.html')
+        self.assert_all_img_and_alt_present(
+            os.path.join('..', 'thumbnails.html'))
 
     # See thumbnails.feature
     # Part of my dithering between what's a feature test and what's a unit test.

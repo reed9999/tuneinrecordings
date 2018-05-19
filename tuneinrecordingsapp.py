@@ -17,7 +17,7 @@ settings.configure(TEMPLATES=[
 )
 django.setup()
 
-OUTPUT_FILENAME = "thumbnails.html"
+OUTPUT_FILENAME = os.path.join('.', 'thumbnails.html')
 # If I figure out a templating system, this would belong there.
 IMAGE_FILE_AS_IMG_HTML = """
                 <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>
@@ -78,9 +78,10 @@ class TuneInRecordingsApp():
 
     @classmethod
     def write_image_filenames_to(cls, image_files, output_file):
-        rv = cls.new_django_template(image_files, output_file)
 
         output_file.write("<body>")
         for i in image_files:
             output_file.write(IMAGE_FILE_AS_IMG_HTML.format(image_filename=os.path.abspath(i)))
         output_file.write("</body>")
+        #demo for now
+        _ = cls.new_django_template(image_files, output_file)

@@ -13,6 +13,8 @@ TEST_PATHS = {
     'output1': os.path.join(TESTBED_PATH, 'output1'),
     'output2': os.path.join(TESTBED_PATH, 'output2'),
 }
+THIS_FILE_DIR = os.path.dirname(__file__)
+
 class TestTuneInRecordingsApp(TestCase):
     def setUp(self):
         T = TEST_PATHS
@@ -46,30 +48,40 @@ class TestTuneInRecordingsApp(TestCase):
     def construct_both_params(self, base_dir, output_file):
         return App(base_dir=base_dir, output_file=output_file)
 
+    def set_up_general_filenames(self):
+        store = os.path.join(THIS_FILE_DIR,"testbed-store")
+        assert os.path.isdir(store)
+        working = os.path.join(THIS_FILE_DIR,"testbed-working")
+        assert os.path.isdir(working)
+
+
+        src = os.path.join(store, "recordings")
+        dst = os.path.join(working, "recordings")
+        try:
+            copytree(src=src, dst=dst)
+        except:
+            #TODO: Is this a bad thing? Think about it....
+            print("Destination directory is already there: {}".format(dst))
+
     def set_up_simple_filenames(self):
         this_file_dir = os.path.dirname(__file__)
         testbed = os.path.join(this_file_dir,"testbed", "recordings")
         assert os.path.isdir(testbed)
         src = os.path.join(testbed, "2018-03/03-16-to-31/1521620928.1166")
         dst = os.path.join(testbed, "simple/01")
-        copytree(src=src, dst=dst)
+        try:
+            copytree(src=src, dst=dst)
+        except:
+            #TODO: Is this a bad thing? Think about it....
+            print("Destination directory is already there: {}".format(dst))
 
         src = os.path.join(testbed, "2018-03/03-01-to-15")
         dst = os.path.join(testbed, "simple/02")
-        copytree(src=src, dst=dst)
-
-    def set_up_general_filenames(self):
-        this_file_dir = os.path.dirname(__file__)
-        testbed = os.path.join(this_file_dir,"testbed")
-        assert os.path.isdir(testbed)
-        x = "1521309364.52960"
-        src = os.path.join(testbed, "__store", "recordings", x)
-        dst = os.path.join(testbed, x)
-        copytree(src=src, dst=dst)
-
-        src = os.path.join(testbed, "2018-03/03-01-to-15")
-        dst = os.path.join(testbed, "simple/02")
-        copytree(src=src, dst=dst)
+        try:
+            copytree(src=src, dst=dst)
+        except:
+            #TODO: Is this a bad thing? Think about it....
+            print("Destination directory is already there: {}".format(dst))
 
     def test_pathed_image_filenames_in(self):
         self.set_up_simple_filenames()

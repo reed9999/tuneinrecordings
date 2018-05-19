@@ -4,6 +4,7 @@
 
 import os
 import glob
+import django.template
 
 OUTPUT_FILENAME = "thumbnails.html"
 # If I figure out a templating system, this would belong there.
@@ -54,9 +55,16 @@ class TuneInRecordingsApp():
             self.__class__.write_image_filenames_to(image_files, f)
 
     @classmethod
-    def write_image_filenames_to(cls, image_files, output_file):
-        output_file.write("<body>")
+    def new_django_template(cls, image_files, output_file):
+        t = django.template.Template("{{image_files.0}}")
+        c = django.template.Context({'image_files': image_files})
+        t.render(c)
 
+    @classmethod
+    def write_image_filenames_to(cls, image_files, output_file):
+        cls.new_django_template(image_files, output_file)
+
+        output_file.write("<body>")
         for i in image_files:
             output_file.write(IMAGE_FILE_AS_IMG_HTML.format(image_filename=os.path.abspath(i)))
         output_file.write("</body>")

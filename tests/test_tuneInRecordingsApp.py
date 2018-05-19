@@ -61,7 +61,8 @@ class TestTuneInRecordingsApp(TestCase):
         store = os.path.join(THIS_FILE_DIR,"testbed-store")
         assert os.path.isdir(store)
         working = os.path.join(THIS_FILE_DIR,"testbed-working")
-        assert os.path.isdir(working)
+        if not os.path.isdir(working):
+            os.makedirs(working)
 
 
         src = os.path.join(store, "recordings")

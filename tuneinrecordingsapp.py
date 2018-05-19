@@ -17,7 +17,7 @@ settings.configure(TEMPLATES=[
 )
 django.setup()
 
-OUTPUT_FILENAME = os.path.join('.', 'thumbnails.html')
+DEFAULT_OUTPUT_FILE = os.path.join('..', 'thumbnails.html')
 # If I figure out a templating system, this would belong there.
 IMAGE_FILE_AS_IMG_HTML = """
                 <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>
@@ -31,12 +31,14 @@ PROJECT_ROOT_DIR = os.path.dirname(__file__)
 # It's nice to make tests pass, but the app shouldn't know about the testbed!
 # Figure out a better way to handle this default.
 DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed-working', 'recordings')
-DEFAULT_OUTPUT_FILE = './thumbnails.html'
 
 
 class TuneInRecordingsApp():
     """
-    Application to help manage numerous TuneIn recordings subdirectories.
+    Main application class to help manage numerous TuneIn recordings.
+
+    This whole project is an exercise in overdesign, of course. That's how I
+    learn.
 
     At present the command line interface isn't yet implemented.
     >>> from tuneinrecordingsapp import TuneInRecordingsApp as App

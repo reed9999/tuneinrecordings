@@ -16,25 +16,25 @@ Feature: Retrieve thumbnail images from an arbitrary path to assist in figuring
   @fixture.app
   Scenario: Retrieve thumbnails for hardcoded non-recursive path
     Given There are no lingering output files
-    And Individual recordings are present in tests/testbed/recordings
+    And Individual recordings are present in tests/testbed-working/recordings
     When I run the app
-#    Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed/recordings
-    Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings.
+#    Then I get an HTML file tests/output/thumbnails.html allowing me to view all thumbnails in tests/testbed-working/recordings
+    Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed-working/recordings.
 
 
   Scenario: Retrieve thumbnails for hardcoded recursive path
     Given There are no lingering output files
-    And Subdirs with recordings are present in tests/testbed/recordings
+    And Subdirs with recordings are present in tests/testbed-working/recordings
     When I run the app
-    Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings and subdirs
+    Then I get an HTML file ./thumbnails.html with img and alt for all thumbnails in tests/testbed-working/recordings and subdirs
 
   @fixture.app
   Scenario: Retrieve thumbnails for hardcoded recursive path storing in arbitrary output file
     Given There are no lingering output files
-    And Subdirs with recordings are present in tests/testbed/recordings
+    And Subdirs with recordings are present in tests/testbed-working/recordings
     When I run the app with output file ./recordings/output/thumbnails.html
     #Really something like this should be default anyway.
-    Then I get an HTML file ./recordings/output/thumbnails.html with img and alt for all thumbnails in tests/testbed/recordings and subdirs
+    Then I get an HTML file ./recordings/output/thumbnails.html with img and alt for all thumbnails in tests/testbed-working/recordings and subdirs
 
   Scenario: Retrieve thumbnails for arbitrary recursive path
     Given There are no lingering output files

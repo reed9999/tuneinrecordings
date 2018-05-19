@@ -5,15 +5,14 @@ from lxml import html
 from tuneinrecordingsapp import TuneInRecordingsApp as App
 from .results import TEST_RESULTS
 
-
-TESTBED_PATH = 'tests/testbed'
-TEST_PATHS = {
-    'base1': os.path.join(TESTBED_PATH, 'base1'),
-    'base2': os.path.join(TESTBED_PATH, 'base2'),
-    'output1': os.path.join(TESTBED_PATH, 'output1'),
-    'output2': os.path.join(TESTBED_PATH, 'output2'),
-}
 THIS_FILE_DIR = os.path.dirname(__file__)
+TESTBED_WORKING = os.path.join(THIS_FILE_DIR, 'testbed-working')
+TEST_PATHS = {
+    'base1': os.path.join(TESTBED_WORKING, 'base1'),
+    'base2': os.path.join(TESTBED_WORKING, 'base2'),
+    'output1': os.path.join(TESTBED_WORKING, 'output1'),
+    'output2': os.path.join(TESTBED_WORKING, 'output2'),
+}
 
 class TestTuneInRecordingsApp(TestCase):
     def setUp(self):
@@ -32,7 +31,8 @@ class TestTuneInRecordingsApp(TestCase):
 
     def rm_old_contents(self):
         for i in range(1, 3):
-            path = "testbed/recordings/simple/{0:02d}".format(i)
+            path = os.path.join(TESTBED_WORKING, 'recordings', 'simple',
+                                "{0:02d}".format(i))
             if os.path.isdir(path):
                 rmtree(path)
 
@@ -64,8 +64,7 @@ class TestTuneInRecordingsApp(TestCase):
             print("Destination directory is already there: {}".format(dst))
 
     def set_up_simple_filenames(self):
-        this_file_dir = os.path.dirname(__file__)
-        testbed = os.path.join(this_file_dir,"testbed", "recordings")
+        testbed = os.path.join(TESTBED_WORKING, "recordings")
         assert os.path.isdir(testbed)
         src = os.path.join(testbed, "2018-03/03-16-to-31/1521620928.1166")
         dst = os.path.join(testbed, "simple/01")
@@ -73,7 +72,8 @@ class TestTuneInRecordingsApp(TestCase):
             copytree(src=src, dst=dst)
         except:
             #TODO: Is this a bad thing? Think about it....
-            print("Destination directory is already there: {}".format(dst))
+            print("Note: dst directory already there: {}".format(dst))
+            print("This is OK if the test script isn't tearing down yet.")
 
         src = os.path.join(testbed, "2018-03/03-01-to-15")
         dst = os.path.join(testbed, "simple/02")
@@ -100,7 +100,6 @@ class TestTuneInRecordingsApp(TestCase):
 
     def generic_test_go(self, app):
         app.go()
-        self.skipTest('Known failure: something about the store of testbed files being the wrong place.')
         self.verify_all_expected_contents(app)
 
     # I can't decide if it's better to iterate through the four in one test
@@ -137,7 +136,7 @@ class TestTuneInRecordingsApp(TestCase):
         self.skipTest("NYI")
 
     def verify_all_expected_contents(self, app):
-        self.assert_all_img_and_alt_present('./thumbnails.html', 'testbed')
+        self.assert_all_img_and_alt_present('./thumbnails.html')
 
     # See thumbnails.feature
     # Part of my dithering between what's a feature test and what's a unit test.
@@ -170,15 +169,17 @@ class TestTuneInRecordingsApp(TestCase):
             rv.append({'src': src, 'alt': alt})
         return rv
 
-    def assert_all_img_and_alt_present(self, output_file, testbed, recursive=True):
+    def assert_all_img_and_alt_present(self, output_file, recursive=True):
+        #I don't think I was using recursive anyway so taking out the
+        # positional arg won't be a mess.
         with open(output_file, 'r') as f:
             img_srcs, img_alts = self.all_img_attributes_in(f)
             expected = TEST_RESULTS['all_imgs']
 
-            base = "/home/philip/code/tuneinrecordings/tests"
+            base = os.path.join(TESTBED_WORKING, 'recordings')
             # base = os.path.abspath(".")
             full_list_of_absolute_src_paths = \
-                [os.path.join(base, x.format(testbed)) for x in expected]
+                [os.path.join(base, x ) for x in expected]
             self.assert_all_items_in(full_list_of_absolute_src_paths, img_srcs)
             self.assert_all_items_in(["Image named {}".format(x) for x in full_list_of_absolute_src_paths], img_alts)
         if not recursive:

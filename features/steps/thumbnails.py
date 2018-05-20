@@ -1,5 +1,6 @@
 import os
 import glob
+import re
 from tests.results import TEST_RESULTS
 #from hamcrest import assert_that, equal_to
 from lxml import html
@@ -8,7 +9,7 @@ from shutil import copyfile, copy2, copytree, rmtree
 use_step_matcher("re")
 
 THIS_FILE_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.join(THIS_FILE_DIR, '..')
+PROJECT_ROOT = os.path.join(THIS_FILE_DIR, '..', '..')
 PATHS = {
     #Nested better than tuple approach, I can tell. Need to retrofit slightly.
     'default': {'input': os.path.join(PROJECT_ROOT, 'tests', 'testbed-working', 'recordings'),
@@ -137,15 +138,23 @@ def step_impl(context, output_place):
     """
     :type context: behave.runner.Context
     """
-    skip(context)
-    return
-    defaults = PATHS['default']
-    assert os.path.isdir(defaults['input'])
-    #assert os.path.isdir(the containing dir of (defaults['output']))
+    if not re.search('default', output_place):
+        context.scenario.skip()
+        #raise Exception("NYI: Must use the default place right now.")
+        print("NYI: Must use the default place right now.")
+        return
+    output_file = PATHS['default']['output']
+    assert os.path.isdir(os.path.dirname(output_file))
     #recursive=False doesn't do anything yet
     try:
-        assert_all_img_and_alt_present(output_file=output_file,
-                                       testbed=testbed, recursive=False)
+        #Does this make sense? Why is the test doing its own analysis instead
+        # of reading an oracle?
+        # assert_all_img_and_alt_present(output_file=output_file,
+        #                    testbed=PATHS['default']['input'], recursive=False)
+        with open(output_file, 'r') as f:
+            html = f.read()
+            for img in TEST_RESULTS['all_imgs']:
+                assert re.search(img.replace('/','.'), html)
     except NotImplementedError:
         msg = "Non-recursive behavior is not yet/might never be implemented."
         print("WARNING: " + msg)
@@ -157,11 +166,13 @@ def all_img_attributes_in(f):
     return img_srcs, img_alts
 
 
-@then("the output file displays images for img tags in the default place and subdirs\.?")
-def step_impl(context, output_file, testbed):
+@then("the output file displays images for img tags in (?P<input_place>.*) place and subdirs\.?")
+def step_impl(context, input_place):
     """
     :type context: behave.runner.Context
     """
+    context.scenario.skip()
+    return
     assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
 
 @then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")

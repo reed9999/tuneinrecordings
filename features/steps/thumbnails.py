@@ -7,6 +7,21 @@ from shutil import copyfile, copy2, copytree, rmtree
 
 use_step_matcher("re")
 
+THIS_FILE_DIR = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.join(THIS_FILE_DIR, '..')
+PATHS = {
+    #Nested better than tuple approach, I can tell. Need to retrofit slightly.
+    'default': {'input': os.path.join(PROJECT_ROOT, 'tests', 'testbed-working', 'recordings'),
+        'output': os.path.join(PROJECT_ROOT, 'thumbnails.html')},
+    ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
+    ('input', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'testbed-working', 'recordings'),
+    ('output', 'default'): os.path.join(PROJECT_ROOT, 'thumbnails.html'),
+    ('input', 'arbitrary'): os.path.join(PROJECT_ROOT, 'tests', 'arbitrary-name'),
+    ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
+    'store': os.path.join(PROJECT_ROOT, 'tests', 'testbed-store'),
+}
+def skip(context):
+    context.scenario.skip()
 def all_imgs_in(the_file):
     """
     :returns dict of the src and alt attributes for all img tags in the file given
@@ -44,7 +59,6 @@ def assert_all_img_and_alt_present(output_file, testbed, recursive=True):
         raise NotImplementedError
 
 
-
 @given("[Tt]here are no lingering output files")
 def step_impl(context):
     if os.path.isfile("./thumbnails.html"):
@@ -58,18 +72,21 @@ def step_impl(context):
 @given("individual recordings are present in (?P<input_place>.*) place")
 def step_impl(context, input_place):
     """
+    Checks the setup to make sure files are ready for processing.
+
+    Eventually I may want to refactor the default place vs. arbitrary place
+    functionality into two different functions. Later.
+
     :type context: behave.runner.Context
     """
-    context.scenario.skip()
-    testbed = "tests/testbed"
-    dst = os.path.join(testbed, "recordings")
-    store = os.path.join(testbed, "__store/recordings")
+    store = PATHS['store']
+    dst = PATHS['default']['input']
     for fn in glob.glob(pathname=os.path.join(store, "15*")):
         dst_file = os.path.join(dst, os.path.basename(fn))
         try:
             rmtree(dst_file)
         except FileNotFoundError:
-            print("{} DNE".format(dst_file))
+            pass
         except:
             raise
         copytree(fn, dst_file)
@@ -115,14 +132,16 @@ def step_impl(context, testbed):
     #context.testbed = testbed
     context.scenario.skip()
 
-@then("I get an HTML output file in (?P<output_place>) output place")
+@then("I get an HTML output file in (?P<output_place>.*) output place")
 def step_impl(context, output_place):
     """
     :type context: behave.runner.Context
     """
-
-    assert os.path.isfile(output_file)
-    assert os.path.isdir(testbed)
+    skip(context)
+    return
+    defaults = PATHS['default']
+    assert os.path.isdir(defaults['input'])
+    #assert os.path.isdir(the containing dir of (defaults['output']))
     #recursive=False doesn't do anything yet
     try:
         assert_all_img_and_alt_present(output_file=output_file,
@@ -194,4 +213,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    context.scenario.skip()
+    skip(context)

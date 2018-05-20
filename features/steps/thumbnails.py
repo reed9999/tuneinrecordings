@@ -225,3 +225,13 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     skip(context)
+
+#HARD CODED FOR NOW, need to be made parametrized.
+@then(u'the output file gives directory locations for images displayed')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the output file gives directory locations for images displayed')
+
+@then(u'the images have alt tags for all alt tags in the default place and subdirs.')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then the images have alt tags for all alt tags in the default place and subdirs.')
+

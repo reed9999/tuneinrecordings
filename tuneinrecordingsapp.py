@@ -17,7 +17,8 @@ settings.configure(TEMPLATES=[
 )
 django.setup()
 
-DEFAULT_OUTPUT_FILE = os.path.join('..', 'thumbnails.html')
+THIS_FILE_DIR = os.path.dirname(__file__)
+DEFAULT_OUTPUT_FILE = os.path.join(THIS_FILE_DIR, 'thumbnails.html')
 # If I figure out a templating system, this would belong there.
 IMAGE_FILE_AS_IMG_HTML = """
                 <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>

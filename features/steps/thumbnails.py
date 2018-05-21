@@ -62,13 +62,13 @@ def assert_all_img_and_alt_present(output_file, testbed, recursive=True):
 
 @given("[Tt]here are no lingering output files")
 def step_impl(context):
-    if os.path.isfile("./thumbnails.html"):
-        # os.remove("./thumbnails.html")
-        pass
-    dir = "tests/testbed/recordings"
-    if os.path.isfile(dir + "/thumbnails.html"):
-        # os.remove(dir + "/thumbnails.html")
-        pass
+    default_output = PATHS['default']['output']
+    if os.path.isfile(default_output):
+        os.remove(default_output)
+    #some other places I've been leaving clutter.
+    fn = "tests/testbed/recordings/thumbnails.html"
+    if os.path.isfile(fn):
+        os.remove(fn)
 
 @given("individual recordings are present in (?P<input_place>.*) place")
 def step_impl(context, input_place):

@@ -168,8 +168,9 @@ def step_impl(context, input_place):
         with open(context.output_file, 'r') as f:
             html = f.read()
             for img in TEST_RESULTS['all_imgs']:
+                search_return_value = re.search(img.replace('/','.'), html)
                 msg = "ASSERT FAIL: img={img}, html={html}, search={search}".format(
-                    img=img, html=html, search=search,
+                    img=img, html=html, search=search_return_value,
                 )
                 assert re.search(img.replace('/','.'), html), msg
     except NotImplementedError:

@@ -24,6 +24,8 @@ TEST_PATHS = {
     'output2': os.path.join(TESTBED_WORKING, 'output2'),
 }
 
+
+
 class TestTuneInRecordingsApp(TestCase):
     def setUp(self):
         #Perhaps this should be one-time or lazy setup; as is, it's
@@ -92,6 +94,11 @@ class TestTuneInRecordingsApp(TestCase):
         except:
             #TODO: Is this a bad thing? Think about it....
             print("[No problem] Dst directory is already there: {}".format(dst))
+
+    # Fail case : /home/philip/code/tuneinrecordings/tests/testbed/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image
+    def assert_all_items_in(self, list_of_expected, actual_list):
+        for item in list_of_expected:
+            assert item in actual_list, "Not in the list of actuals: {}".format(item)
 
     def test_pathed_image_filenames_in(self):
         """Another test that would be more valuable with an arbitrary directory
@@ -224,8 +231,11 @@ class TestTuneInRecordingsApp(TestCase):
         if not recursive:
             raise NotImplementedError
 
-#Fail case : /home/philip/code/tuneinrecordings/tests/testbed/1521309364.52960/e56200f5bbfbca547aa0712a5c9947aa.image
-    def assert_all_items_in(self, list_of_expected, actual_list):
-        for item in list_of_expected:
-            assert item in actual_list, "Not in the list of actuals: {}".format(item)
-
+    def test_empty_dir(self):
+        empty_dirname = os.path.join(TESTBED_WORKING, 'empty')
+        if os.path.isdir(empty_dirname):
+            os.rmdir(empty_dirname)
+        os.mkdir(empty_dirname)
+        app = App(base_dir=empty_dirname)
+        with self.assertRaises(App.NoImageFilesFound) as context:
+            app.go()

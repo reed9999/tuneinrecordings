@@ -34,6 +34,13 @@ DEFAULT_BASE_DIR = os.path.join(PROJECT_ROOT_DIR, 'tests', 'testbed-working', 'r
 
 
 class TuneInRecordingsApp():
+    class NoImageFilesFound(RuntimeError):
+        def __init__(self, base_dir):
+            self._base_dir = base_dir
+
+        def __repr__(self):
+            "NoImageFilesFound exception. Base dir = {}".format(self._base_dir)
+
     """
     Main application class to help manage numerous TuneIn recordings.
 
@@ -66,6 +73,9 @@ class TuneInRecordingsApp():
         directory = (directory or self._base_dir)
         output_file = (output_file or self._output_file)
         image_files = self.__class__.pathed_image_filenames_in(directory)
+        #at present I see no reason not to complain.
+        if not len(image_files):
+            raise self.NoImageFilesFound(directory)
 
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         with open(output_file, "w") as f:

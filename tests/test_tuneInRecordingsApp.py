@@ -1,4 +1,5 @@
 import os
+import re
 from unittest import TestCase
 from shutil import copytree, rmtree
 from lxml import html
@@ -147,20 +148,26 @@ class TestTuneInRecordingsApp(TestCase):
                 self.fail(msg)
 
     def test_write_image_filenames_to(self):
-        self.skipTest("NYI")
-        # input = {
-        #     'no params': 'xyz'
-        #     'base only': self.construct_base_dir_only(TEST_PATHS['base1']),
-        #     'output only': self.construct_output_file_only(TEST_PATHS['output1']),
-        #     'both': self.construct_both_params(base_dir=TEST_PATHS['base2'],
-        #                                        output_file=TEST_PATHS['output2']),
-        # }
-        for (k, app) in self._apps.items():
-            dummy_filename = os.path.join(THIS_FILE_DIR, "dummy.html")
-            app.write_image_filenames_to(dummy_filename)
-            assert os.path.isfile(dummy_filename), "File should have been created by {}: {}".format(k, dummy_filename)
-            with open(dummy_filename):
-                assert_all_img_and_alt_present(dummy_filename)
+        """Find all images in the app's directory and write names to abitrary output
+
+        Oops never mind. The below is nonsense but points out how confusing this
+        class method is.... so maybe I need a better way to do this?
+
+        The weird asymmetry of this test points out the weird asymmetry of
+        the method, which should probably be redesigned.
+        Why are inputs taken from the class instance but the outfile is passed in?
+        [ANSWER: They're not. I was confused. It's a class method.]
+        """
+        dummy_filename = os.path.join(THIS_FILE_DIR, "dummy.html")
+        some_filenames = ['some-filename.image', 'another.image', 'badextension.docx', '123.image']
+        with open(dummy_filename, 'w') as open_file:
+            App.write_image_filenames_to(image_files=some_filenames,
+                                     output_file=open_file)
+        with open(dummy_filename) as written_file:
+            actual = written_file.read()
+            assert re.search(pattern="some-filename.image", string=actual)
+            assert re.search(pattern="another.image", string=actual)
+            assert re.search(pattern="123.image", string=actual)
 
 
     def verify_all_expected_contents(self, app):

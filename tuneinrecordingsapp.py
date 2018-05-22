@@ -19,11 +19,10 @@ django.setup()
 
 THIS_FILE_DIR = os.path.dirname(__file__)
 DEFAULT_OUTPUT_FILE = os.path.join(THIS_FILE_DIR, 'thumbnails.html')
-# If I figure out a templating system, this would belong there.
-IMAGE_FILE_AS_IMG_HTML = """
-                <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{image_filename}</h1>
-                <img src="{image_filename}" 
-                    alt="Image named {image_filename}" style="width: 150px;"/>
+DJANGO_TEMPLATE_IMAGE_FILENAME = """
+                <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{{image_filename}}</h1>
+                <img src="{{image_filename}}" 
+                    alt="Image named {{image_filename}}" style="width: 150px;"/>
                 """
 
 PROJECT_ROOT_DIR = os.path.dirname(__file__)
@@ -72,19 +71,14 @@ class TuneInRecordingsApp():
         with open(output_file, "w") as f:
             self.__class__.write_image_filenames_to(image_files, f)
 
-    @classmethod
-    def new_django_template(cls, image_files, output_file):
-        t = django.template.Template("{{image_files.0}}")
-        c = django.template.Context({'image_files': image_files})
-        print(t.render(c))
-        return (t.render(c))
+
 
     @classmethod
-    def write_image_filenames_to(cls, image_files, output_file):
-
+    def write_image_filenames_to(cls, image_filenames, output_file):
+        template = django.template.Template(DJANGO_TEMPLATE_IMAGE_FILENAME)
         output_file.write("<body>")
-        for i in image_files:
-            output_file.write(IMAGE_FILE_AS_IMG_HTML.format(image_filename=os.path.abspath(i)))
+        for img_src in image_filenames:
+            img_src = os.path.abspath(img_src)
+            context = django.template.Context({'image_filename': img_src})
+            output_file.write(template.render(context))
         output_file.write("</body>")
-        #demo for now
-        _ = cls.new_django_template(image_files, output_file)

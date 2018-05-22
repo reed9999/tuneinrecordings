@@ -161,7 +161,7 @@ class TestTuneInRecordingsApp(TestCase):
         dummy_filename = os.path.join(THIS_FILE_DIR, "dummy.html")
         some_filenames = ['some-filename.image', 'another.image', 'badextension.docx', '123.image']
         with open(dummy_filename, 'w') as open_file:
-            App.write_image_filenames_to(image_files=some_filenames,
+            App.write_image_filenames_to(image_filenames=some_filenames,
                                      output_file=open_file)
         with open(dummy_filename) as written_file:
             actual = written_file.read()

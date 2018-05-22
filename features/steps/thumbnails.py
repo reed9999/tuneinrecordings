@@ -169,9 +169,10 @@ def step_impl(context, input_place):
             html = f.read()
             for img in TEST_RESULTS['all_imgs']:
                 search_return_value = re.search(img.replace('/','.'), html)
-                msg = "ASSERT FAIL: img={img}, html={html}, search={search}".format(
+                msg = "ASSERT FAIL: img={img}, html={html}, search={search}, " \
+                      "output={output}".format(
                     img=img, html=html, search=search_return_value,
-                )
+                    output=context.output_file),
                 assert re.search(img.replace('/','.'), html), msg
     except NotImplementedError:
         msg = "Non-recursive behavior is not yet/might never be implemented."

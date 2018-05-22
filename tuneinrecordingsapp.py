@@ -77,6 +77,7 @@ class TuneInRecordingsApp():
     def write_image_filenames_to(cls, image_filenames, output_file):
         template = django.template.Template(DJANGO_TEMPLATE_IMAGE_FILENAME)
         output_file.write("<body>")
+        assert len(image_filenames), "image_filenames list shouldn't be empty"
         for img_src in image_filenames:
             img_src = os.path.abspath(img_src)
             context = django.template.Context({'image_filename': img_src})

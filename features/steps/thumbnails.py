@@ -87,6 +87,11 @@ def step_impl(context, input_place):
 
     :type context: behave.runner.Context
     """
+    if not re.search('default', input_place):
+        context.scenario.skip()
+        print("NYI: Must use the default input place right now.")
+        return
+
     store = PATHS['store']
     dst = PATHS['default']['input']
     for fn in glob.glob(pathname=os.path.join(store, "15*")):
@@ -99,23 +104,14 @@ def step_impl(context, input_place):
             raise
         copytree(fn, dst_file)
 
-
-@given("XXX")
-def step_impl(context, testbed):
-    """
-    :type context: behave.runner.Context
-    """
-
-    testbed = "tests/testbed"
-    dst = os.path.join(testbed, "recordings/2018-03")
-    store = os.path.join(testbed, "__store/recordings/2018-03")
-    try:
-        rmtree(dst)
-    except FileNotFoundError:
-        print("{} DNE".format(dst))
-    except:
-        raise
-    copytree(store, dst)
+    # random handy snippet. Put it somewhere sensible.
+    # try:
+    #     rmtree(dst)
+    # except FileNotFoundError:
+    #     print("{} DNE".format(dst))
+    # except:
+    #     raise
+    # copytree(store, dst)
 
 
 @when("I run the app")
@@ -201,34 +197,6 @@ def step_impl(context, output_file):
 
 #NOT YET IMPLEMENTED STUFF
 
-@given("the GUI is running")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-@when("I invoke the image naming dialogue")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-@step("I use the GUI to assign names to images")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-@then("the names I assigned are retained\.")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    skip(context)
-
 #HARD CODED FOR NOW, need to be made parametrized.
 @then(u'the output file gives directory locations for images displayed')
 def step_impl(context):
@@ -254,3 +222,34 @@ def step_impl(context):
     """
     raise NotImplementedError(u'STEP: Then the images have alt tags for all alt tags in the default place and subdirs.')
 
+
+
+class NotYetImplementedStuff:
+
+    @given("the GUI is running")
+    def step_impl(context):
+        """
+        :type context: behave.runner.Context
+        """
+        pass
+
+    @when("I invoke the image naming dialogue")
+    def step_impl(context):
+        """
+        :type context: behave.runner.Context
+        """
+        pass
+
+    @step("I use the GUI to assign names to images")
+    def step_impl(context):
+        """
+        :type context: behave.runner.Context
+        """
+        pass
+
+    @then("the names I assigned are retained\.")
+    def step_impl(context):
+        """
+        :type context: behave.runner.Context
+        """
+        skip(context)

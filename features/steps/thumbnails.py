@@ -23,6 +23,13 @@ PATHS = {
 }
 def skip(context):
     context.scenario.skip()
+
+def all_img_attributes_in(f):
+    img_dicts = all_imgs_in(f)
+    img_srcs = [i['src'] for i in img_dicts]
+    img_alts = [i['alt'] for i in img_dicts]
+    return img_srcs, img_alts
+
 def all_imgs_in(the_file):
     """
     :returns dict of the src and alt attributes for all img tags in the file given
@@ -140,35 +147,11 @@ def step_impl(context, output_place):
     """
     if not re.search('default', output_place):
         context.scenario.skip()
-        #raise Exception("NYI: Must use the default place right now.")
         print("NYI: Must use the default place right now.")
         return
     output_file = PATHS['default']['output']
     assert os.path.isdir(os.path.dirname(output_file))
-    #recursive=False doesn't do anything yet
-    try:
-        #Does this make sense? Why is the test doing its own analysis instead
-        # of reading an oracle?
-        # assert_all_img_and_alt_present(output_file=output_file,
-        #                    testbed=PATHS['default']['input'], recursive=False)
-        with open(output_file, 'r') as f:
-            html = f.read()
-            for img in TEST_RESULTS['all_imgs']:
-                #Following assertion is failing but only in test environment
-                #Seems to be happy in dev env.
-
-                context.scenario.skip()
-                return
-                assert re.search(img.replace('/','.'), html)
-    except NotImplementedError:
-        msg = "Non-recursive behavior is not yet/might never be implemented."
-        print("WARNING: " + msg)
-
-def all_img_attributes_in(f):
-    img_dicts = all_imgs_in(f)
-    img_srcs = [i['src'] for i in img_dicts]
-    img_alts = [i['alt'] for i in img_dicts]
-    return img_srcs, img_alts
+    context.output_file = output_file
 
 
 @then("the output file displays images for img tags in (?P<input_place>.*) place and subdirs\.?")
@@ -176,11 +159,23 @@ def step_impl(context, input_place):
     """
     :type context: behave.runner.Context
     """
-    context.scenario.skip()
-    return
-    assert os.path.isfile(output_file), "File {} does not exist".format(output_file)
+    #recursive=False doesn't do anything yet
+    try:
+        #Does this make sense? Why is the test doing its own analysis instead
+        # of reading an oracle?
+        # assert_all_img_and_alt_present(output_file=output_file,
+        #                    testbed=PATHS['default']['input'], recursive=False)
+        with open(context.output_file, 'r') as f:
+            html = f.read()
+            for img in TEST_RESULTS['all_imgs']:
+                #Following assertion is failing but only in test environment
+                #Seems to be happy in dev env.
+                assert re.search(img.replace('/','.'), html)
+    except NotImplementedError:
+        msg = "Non-recursive behavior is not yet/might never be implemented."
+        print("WARNING: " + msg)
 
-@then("I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?")
+@then(u'I get an HTML file (?P<output_file>.*) with img and alt for all thumbnails in (?P<testbed>.*) and subdirs\.?')
 def step_impl(context, output_file, testbed):
     """
     :type context: behave.runner.Context
@@ -234,9 +229,25 @@ def step_impl(context):
 #HARD CODED FOR NOW, need to be made parametrized.
 @then(u'the output file gives directory locations for images displayed')
 def step_impl(context):
+    """
+    This is a really hard one to implement because I need to not just match the
+    img file name but also make sure the directory part is displayed.
+    Perhaps the best thing is to walk through the HTML and use a suitable
+    xpath?
+    :param context:
+    :return:
+    """
     raise NotImplementedError(u'STEP: Then the output file gives directory locations for images displayed')
 
 @then(u'the images have alt tags for all alt tags in the default place and subdirs.')
 def step_impl(context):
+    """
+    As with the previous one, hard to implement because I need to not just
+    match the img file name but also make sure the directory part is displayed.
+    Perhaps the best thing is to walk through the HTML and use a suitable
+    xpath?
+    :param context:
+    :return:
+    """
     raise NotImplementedError(u'STEP: Then the images have alt tags for all alt tags in the default place and subdirs.')
 

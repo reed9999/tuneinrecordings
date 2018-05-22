@@ -66,7 +66,7 @@ def step_impl(context):
     if os.path.isfile(default_output):
         os.remove(default_output)
     #some other places I've been leaving clutter.
-    fn = "tests/testbed/recordings/thumbnails.html"
+    fn = os.path.join(THIS_FILE_DIR, '..', 'recordings', 'thumbnails.html')
     if os.path.isfile(fn):
         os.remove(fn)
 

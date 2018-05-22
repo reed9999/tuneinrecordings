@@ -25,7 +25,6 @@ TEST_PATHS = {
 
 class TestTuneInRecordingsApp(TestCase):
     def setUp(self):
-        TEST_PATHS
         #Perhaps this should be one-time or lazy setup; as is, it's
         # inefficient to keep creating apps we don't use.
         self._apps = {
@@ -71,7 +70,7 @@ class TestTuneInRecordingsApp(TestCase):
             copytree(src=src, dst=dst)
         except:
             #TODO: Is this a bad thing? Think about it....
-            print("Destination directory is already there: {}".format(dst))
+            print("[No problem] Dst directory is already there: {}".format(dst))
 
     def set_up_simple_filenames(self):
         testbed = os.path.join(TESTBED_WORKING, "recordings")
@@ -82,7 +81,7 @@ class TestTuneInRecordingsApp(TestCase):
             copytree(src=src, dst=dst)
         except:
             #TODO: Is this a bad thing? Think about it....
-            print("Note: dst directory already there: {}".format(dst))
+            print("[No problem]: dst directory already there: {}".format(dst))
             print("This is OK if the test script isn't tearing down yet.")
 
         src = os.path.join(testbed, "2018-03/03-01-to-15")
@@ -91,7 +90,7 @@ class TestTuneInRecordingsApp(TestCase):
             copytree(src=src, dst=dst)
         except:
             #TODO: Is this a bad thing? Think about it....
-            print("Destination directory is already there: {}".format(dst))
+            print("[No problem] Dst directory is already there: {}".format(dst))
 
     def test_pathed_image_filenames_in(self):
         """Another test that would be more valuable with an arbitrary directory
@@ -148,13 +147,25 @@ class TestTuneInRecordingsApp(TestCase):
                 self.fail(msg)
 
     def test_write_image_filenames_to(self):
-        for (k, app) in self._apps.items():
-            assert True, "failure in {}".format(k)
         self.skipTest("NYI")
+        # input = {
+        #     'no params': 'xyz'
+        #     'base only': self.construct_base_dir_only(TEST_PATHS['base1']),
+        #     'output only': self.construct_output_file_only(TEST_PATHS['output1']),
+        #     'both': self.construct_both_params(base_dir=TEST_PATHS['base2'],
+        #                                        output_file=TEST_PATHS['output2']),
+        # }
+        for (k, app) in self._apps.items():
+            dummy_filename = os.path.join(THIS_FILE_DIR, "dummy.html")
+            app.write_image_filenames_to(dummy_filename)
+            assert os.path.isfile(dummy_filename), "File should have been created by {}: {}".format(k, dummy_filename)
+            with open(dummy_filename):
+                assert_all_img_and_alt_present(dummy_filename)
+
 
     def verify_all_expected_contents(self, app):
         self.assert_all_img_and_alt_present(
-            os.path.join('..', 'thumbnails.html'))
+            os.path.join(THIS_FILE_DIR, '..', 'thumbnails.html'))
 
     # See thumbnails.feature
     # Part of my dithering between what's a feature test and what's a unit test.
@@ -187,10 +198,13 @@ class TestTuneInRecordingsApp(TestCase):
             rv.append({'src': src, 'alt': alt})
         return rv
 
-    def assert_all_img_and_alt_present(self, output_file, recursive=True):
-        #I don't think I was using recursive anyway so taking out the
-        # positional arg won't be a mess.
-        with open(output_file, 'r') as f:
+    def assert_all_img_and_alt_present(self, output_filename, recursive=True):
+        #I don't think I was using recursive anyway for the moment so taking
+        # out the positional arg won't be a mess.
+        """Helper function: assert all imgs in TEST_RESULTS['all_imgs'] present
+        """
+        assert os.path.isfile(output_filename)
+        with open(output_filename, 'r') as f:
             img_srcs, img_alts = self.all_img_attributes_in(f)
             expected = TEST_RESULTS['all_imgs']
 

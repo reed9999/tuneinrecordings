@@ -21,8 +21,6 @@ PATHS = {
     ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
     'store': os.path.join(PROJECT_ROOT, 'tests', 'testbed-store'),
 }
-def skip(context):
-    context.scenario.skip()
 
 @then(u'ls')
 def step_impl(context):
@@ -32,10 +30,12 @@ def step_impl(context):
         # print("root {} dn {} fn {}".format(root, dn, fn))
         rv.append((root, dn, fn))
     context.tshoot = rv
+    assert False, "Here is the tshoot info: \n{}".format(context.tshoot_ls_info)
     assert False, context.tshoot
 
 @when(u'tshoot')
 def step_impl(context):
+    context.scenario.skip()
     path = os.path.join(THIS_FILE_DIR, '..', '..', 'tests', 'testbed-working')
     print("Eventually maybe run the app here or something")
     for (root, dn, fn) in os.walk(path):

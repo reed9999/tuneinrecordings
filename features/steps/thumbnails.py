@@ -77,6 +77,16 @@ def step_impl(context):
     if os.path.isfile(fn):
         os.remove(fn)
 
+def tshoot_ls_info(store, dst):
+    store_list = []
+    for (root, dn, fn) in os.walk(store):
+        store_list.append("""STORE root {} __________________ directory {} __________________ file {}""".format(root, dn, fn))
+    dst_list = []
+    for (root, dn, fn) in os.walk(dst):
+        dst_list.append("""DST root {} __________________ directory {} __________________ file {}""".format(root, dn, fn))
+
+    return {'store': store_list, 'dst': dst_list}
+
 @given("individual recordings are present in (?P<input_place>.*) place")
 def step_impl(context, input_place):
     """
@@ -87,6 +97,7 @@ def step_impl(context, input_place):
 
     :type context: behave.runner.Context
     """
+
     if not re.search('default', input_place):
         context.scenario.skip()
         print("NYI: Must use the default input place right now.")
@@ -94,7 +105,10 @@ def step_impl(context, input_place):
 
     store = PATHS['store']
     dst = PATHS['default']['input']
-    for fn in glob.glob(pathname=os.path.join(store, "15*")):
+    #This shouldn't have been limited to 15*.
+    # It might be OK to just copytree the whole thing but for now
+    # leave as similar as possible. (TODO: evaluate)
+    for fn in glob.glob(pathname=os.path.join(store, "*")):
         dst_file = os.path.join(dst, os.path.basename(fn))
         try:
             rmtree(dst_file)
@@ -103,6 +117,7 @@ def step_impl(context, input_place):
         except:
             raise
         copytree(fn, dst_file)
+    context.tshoot_ls_info = tshoot_ls_info(store, dst)
 
     # random handy snippet. Put it somewhere sensible.
     # try:

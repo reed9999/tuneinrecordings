@@ -34,6 +34,7 @@ def step_impl(context):
         rv.append("""LS STEP filename {} """.format(fn))
     context.tshoot_ls_info['ls step'] = rv
     print(context.tshoot_ls_info)
+    assert len(rv), "ARRGH. directory {} should not be empty.\ntshoot info:\n{}".format(path, context.tshoot_ls_info)
 
 @then(u'fail')
 def step_impl(context):

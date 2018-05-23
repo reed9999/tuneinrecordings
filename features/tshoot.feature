@@ -9,7 +9,7 @@ Feature: Troubleshoot
     Given there are no lingering output files
     And individual recordings are present in the default input place
     Then ls
-    And fail
+#    And fail
 
     Given there are no lingering output files
     And individual recordings are present in the default input place

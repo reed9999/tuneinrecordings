@@ -77,13 +77,18 @@ def step_impl(context):
     if os.path.isfile(fn):
         os.remove(fn)
 
+
 def tshoot_ls_info(store, dst):
     store_list = []
     for (root, dn, fn) in os.walk(store):
-        store_list.append("""STORE root {} __________________ directory {} __________________ file {}""".format(root, dn, fn))
+        store_list.append("""STORE root {}\n""".format(root))
+        store_list.append("""STORE directory {} """.format(dn))
+        store_list.append("""STORE filename {} """.format(fn))
     dst_list = []
     for (root, dn, fn) in os.walk(dst):
-        dst_list.append("""DST root {} __________________ directory {} __________________ file {}""".format(root, dn, fn))
+        store_list.append("""DST root {}\n""".format(root))
+        store_list.append("""DST directory {} \n""".format(dn))
+        store_list.append("""DST filename {} \n""".format(fn))
 
     return {'store': store_list, 'dst': dst_list}
 

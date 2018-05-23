@@ -26,6 +26,7 @@ PATHS = {
 def step_impl(context):
     path = os.path.join(THIS_FILE_DIR, '..', '..', 'tests', 'testbed-working')
     rv = []
+    rv.append("""****LS PATH {}\n""".format(path))
     for (root, dn, fn) in os.walk(path):
         # print("root {} dn {} fn {}".format(root, dn, fn))
         rv.append("""LS STEP root {}\n""".format(root))
@@ -33,9 +34,11 @@ def step_impl(context):
         rv.append("""LS STEP filename {} """.format(fn))
     context.tshoot_ls_info['ls step'] = rv
     print(context.tshoot_ls_info)
-    print("*****")
-    assert len(rv), "rv was empty!!!!!!: \n{}".format(context.tshoot_ls_info)
-    assert not len(rv), "rv OK but here is the tshoot info: \n{}".format(context.tshoot_ls_info)
+
+@then(u'fail')
+def step_impl(context):
+    assert False, "tshoot info: \n{}".format(context.tshoot_ls_info)
+
 
 @when(u'tshoot')
 def step_impl(context):

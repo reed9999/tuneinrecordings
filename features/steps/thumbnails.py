@@ -76,7 +76,9 @@ def step_impl(context):
     fn = os.path.join(THIS_FILE_DIR, '..', 'recordings', 'thumbnails.html')
     if os.path.isfile(fn):
         os.remove(fn)
-
+    fn = os.path.join(THIS_FILE_DIR, '..', 'recordings', 'recordings')
+    if os.path.isdir(fn):
+        rmtree(fn)
 
 def tshoot_ls_info(store, dst):
     store_list = []

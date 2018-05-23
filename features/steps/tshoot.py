@@ -27,9 +27,12 @@ def skip(context):
 @then(u'ls')
 def step_impl(context):
     path = os.path.join(THIS_FILE_DIR, '..', '..', 'tests', 'testbed-working')
+    rv = []
     for (root, dn, fn) in os.walk(path):
-        print("root {} dn {} fn {}".format(root, dn, fn))
-
+        # print("root {} dn {} fn {}".format(root, dn, fn))
+        rv.append((root, dn, fn))
+    context.tshoot = rv
+    assert False, context.tshoot
 
 @when(u'tshoot')
 def step_impl(context):

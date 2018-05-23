@@ -12,10 +12,10 @@ THIS_FILE_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.join(THIS_FILE_DIR, '..', '..')
 PATHS = {
     #Nested better than tuple approach, I can tell. Need to retrofit slightly.
-    'default': {'input': os.path.join(PROJECT_ROOT, 'tests', 'testbed-working', 'recordings'),
+    'default': {'input': os.path.join(PROJECT_ROOT, 'tests', 'testbed-working'),
         'output': os.path.join(PROJECT_ROOT, 'thumbnails.html')},
     ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
-    ('input', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'testbed-working', 'recordings'),
+    ('input', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'testbed-working'),
     ('output', 'default'): os.path.join(PROJECT_ROOT, 'thumbnails.html'),
     ('input', 'arbitrary'): os.path.join(PROJECT_ROOT, 'tests', 'arbitrary-name'),
     ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),

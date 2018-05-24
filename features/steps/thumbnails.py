@@ -76,6 +76,9 @@ def step_impl(context):
     fn = os.path.join(THIS_FILE_DIR, '..', 'recordings', 'thumbnails.html')
     if os.path.isfile(fn):
         os.remove(fn)
+    fn = os.path.join(THIS_FILE_DIR, '..', 'recordings', 'recordings')
+    if os.path.isdir(fn):
+        rmtree(fn)
 
 @given("individual recordings are present in (?P<input_place>.*) place")
 def step_impl(context, input_place):
@@ -94,7 +97,10 @@ def step_impl(context, input_place):
 
     store = PATHS['store']
     dst = PATHS['default']['input']
-    for fn in glob.glob(pathname=os.path.join(store, "15*")):
+    #This shouldn't have been limited to 15*.
+    # It might be OK to just copytree the whole thing but for now
+    # leave as similar as possible. (TODO: evaluate)
+    for fn in glob.glob(pathname=os.path.join(store, "*")):
         dst_file = os.path.join(dst, os.path.basename(fn))
         try:
             rmtree(dst_file)

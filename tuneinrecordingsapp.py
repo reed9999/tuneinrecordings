@@ -6,6 +6,8 @@ import os
 import glob
 import django.template
 from django.conf import settings
+
+# To use Django templates we have to do some very minimal Django setup.
 settings.configure(TEMPLATES=[
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -20,9 +22,6 @@ django.setup()
 THIS_FILE_DIR = os.path.dirname(__file__)
 DEFAULT_OUTPUT_FILE = os.path.join(THIS_FILE_DIR, 'thumbnails.html')
 DJANGO_TEMPLATE_IMAGE_FILENAME = """
-                <h1 style="font-family: quarca, helvetica, arial, sans-serif;">{{image_filename}}</h1>
-                <img src="{{image_filename}}" 
-                    alt="Image named {{image_filename}}" style="width: 150px;"/>
                 """
 
 PROJECT_ROOT_DIR = os.path.dirname(__file__)
@@ -85,7 +84,8 @@ class TuneInRecordingsApp():
 
     @classmethod
     def write_image_filenames_to(cls, image_filenames, output_file):
-        template = django.template.Template(DJANGO_TEMPLATE_IMAGE_FILENAME)
+        #template = django.template.Template(DJANGO_TEMPLATE_IMAGE_FILENAME)
+        template = django.template.loader.get_template('templates/image_files.html')
         output_file.write("<body>")
         assert len(image_filenames), "image_filenames list shouldn't be empty"
         for img_src in image_filenames:

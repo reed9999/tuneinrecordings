@@ -11,18 +11,14 @@ use_step_matcher("re")
 THIS_FILE_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.join(THIS_FILE_DIR, '..', '..')
 PATHS = {
-    #Nested better than tuple approach, I can tell. Need to retrofit slightly.
+    #Nested better than tuple approach. Need to retrofit slightly.
     'default': {'input': os.path.join(PROJECT_ROOT, 'tests', 'testbed-working'),
-        'output': os.path.join(PROJECT_ROOT, 'thumbnails.html')},
-    ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
-    ('input', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'testbed-working'),
-    ('output', 'default'): os.path.join(PROJECT_ROOT, 'thumbnails.html'),
-    ('input', 'arbitrary'): os.path.join(PROJECT_ROOT, 'tests', 'arbitrary-name'),
-    ('output', 'default'): os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir', 'arbitrary-filename.txt'),
+                'output': os.path.join(PROJECT_ROOT, 'thumbnails.html')},
+    'arbitrary': {'input': os.path.join(PROJECT_ROOT, 'tests', 'arbitrary-name'),
+                'output': os.path.join(PROJECT_ROOT, 'tests', 'another-arbitrary-dir',
+                                       'arbitrary-filename.txt')},
     'store': os.path.join(PROJECT_ROOT, 'tests', 'testbed-store'),
 }
-def skip(context):
-    context.scenario.skip()
 
 def all_img_attributes_in(f):
     img_dicts = all_imgs_in(f)
@@ -103,7 +99,7 @@ def step_impl(context, input_place):
     for fn in glob.glob(pathname=os.path.join(store, "*")):
         dst_file = os.path.join(dst, os.path.basename(fn))
         try:
-            rmtree(dst_file)
+            rmtree(dst_file, ignore_errors=True)
         except FileNotFoundError:
             pass
         except:
@@ -258,4 +254,4 @@ class NotYetImplementedStuff:
         """
         :type context: behave.runner.Context
         """
-        skip(context)
+        context.scenario.skip()
